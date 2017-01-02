@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+<head>
+	<title>Koen Lageveen</title>
+
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="icon" type="image/png" href="favicon.png">
+
+	<!-- YUI reset -->
+	<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.18.1/build/cssreset/cssreset-min.css">
+
+	<!-- Styles -->
+	<link rel="stylesheet" href="stylesheet.css">
+	<link href="https://fonts.googleapis.com/css?family=Josefin+Slab:300" rel="stylesheet">
+
+</head>
+<body>
+
+<div class="swipe slideshow" id="swipe">
+	<div class="swipe-wrap">
+		<div class="slide cover">
+			<svg class="playbutton" onclick="mySwipe.next()" width="101px" height="102px" viewBox="0 -1 101 102" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+				<path d="M50,0 L100,50" id="Line" stroke="#ffffff" stroke-width="1" stroke-linecap="square" fill="none"></path>
+				<path d="M100,50 L50,100" id="Line" stroke="#ffffff" stroke-width="1" stroke-linecap="square" fill="none"></path>
+				<path d="M99,50 L1,50" id="Line" stroke="#ffffff" stroke-width="1" stroke-linecap="square" fill="none"></path>
+			</svg>
+			<div class="title">
+				<h1>Koen Lageveen</h1>
+				<p>Photographer</p>
+			</div>
+		</div>
+		<div class="slide">
+			<img src="photos/1.jpg" alt="">
+		</div>
+		<div class="slide">
+			<img src="photos/2.jpg" alt="">
+		</div>
+		<div class="slide">
+			<img src="photos/3.jpg" alt="">
+		</div>
+		<div class="slide">
+			<img src="photos/4.jpg" alt="">
+		</div>
+	</div>
+</div>
+<span class="previous" onclick="mySwipe.prev()"></span>
+<span class="next" onclick="mySwipe.next()"></span>
+
+<script src='swipe.js'></script>
+<script>
+	/* eslint-disable */
+	window.mySwipe = new Swipe(document.getElementById('swipe'), {
+	// startSlide: 2,
+	// speed: 400,
+	// auto: 3000,
+	continuous: false,
+	// disableScroll: false,
+	// stopPropagation: false,
+	callback: function(index, elem) {
+		if (index > 0) {
+			document.body.classList.add("initialized");
+		}  else {
+			document.body.classList.remove("initialized");
+		}
+	},
+	// transitionEnd: function(index, elem) {}
+	});
+</script>
+
+</body>
+</html>
