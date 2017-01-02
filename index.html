@@ -45,6 +45,10 @@
 		</div>
 	</div>
 </div>
+<div class="footer">
+	<span>Koen Lageveen</span> <span>· Photographer</span>
+</div>
+
 <span class="previous" onclick="mySwipe.prev()"></span>
 <span class="next" onclick="mySwipe.next()"></span>
 
@@ -63,6 +67,11 @@
 			document.body.classList.add("initialized");
 		}  else {
 			document.body.classList.remove("initialized");
+		}
+		if (index === window.mySwipe.getNumSlides() - 1) {
+			document.body.classList.add("at-end");
+		}  else {
+			document.body.classList.remove("at-end");
 		}
 	},
 	// transitionEnd: function(index, elem) {}
