@@ -33,9 +33,29 @@ html {
 }
 body {
 	height: 100%;
+	font-family: Avenir, Helvetica, sans-serif;
 	color: #fff;
+	line-height: 1.4;
 }
 
+a {
+	color: #56BC8A;
+	text-decoration: none;
+}
+a:hover,
+a:active {
+	color: #5CC993;
+	text-decoration: underline;
+}
+
+h1 {
+	font-size: 3em;
+	font-family: 'Josefin Slab', Georgia, serif;
+}
+h2 {
+	font-size: 2em;
+	font-family: 'Josefin Slab', Georgia, serif;
+}
 .swipe {
 	overflow: hidden;
 	visibility: hidden;
@@ -152,7 +172,7 @@ body {
 	stroke: rgb(255,255,255);
 }
 
-.title {
+header {
 	text-align: center;
 	width: calc(100% - 8em);
 	position: absolute;
@@ -160,26 +180,23 @@ body {
 	text-shadow: 0 0 .4em #000;
 	transition: all 1s linear;
 }
-.title h1 {
-	font-size: 3em;
+header h1 {
 	font-family: 'Josefin Slab', Georgia, serif;
 	animation: 1s slide ease-in-out;
 	position: relative;
-	line-height: 1.3;
 }
-.title p {
+header p {
 	color: #ccc;
 	font-size: 1.333em;
 	font-variant: small-caps;
 	text-transform: lowercase;
-	font-family: Avenir, Helvetica, sans-serif;
 	animation: 2s slide ease-in-out;
 	text-indent: .8em;
 	letter-spacing: .8em;
 	position: relative;
 	line-height: 1;
 }
-.footer {
+footer {
 	position: fixed;
 	right: 1em;
 	bottom: .75em;
@@ -187,10 +204,61 @@ body {
 	display: none;
 	animation: .5s slideFooter ease-in-out;
 }
-.footer span:last-child {
+footer span:last-child {
 	color: #ccc;
 }
-.initialized .footer {
+.initialized footer {
 	display: block;
 }
 
+article {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: rgba(0,0,0,.9);
+	padding: 3em;
+	color: #ccc;
+	overflow: auto;
+}
+article > * {
+	max-width: 33rem;
+	margin: 0 auto;
+}
+article p {
+	margin: 1em auto;
+}
+
+.about {
+	display: none;
+	z-index: 2;
+	animation: .25s fadeIn ease-out;
+}
+.about.visible {
+	display: block;
+}
+
+.signature {
+	font-weight: 500;
+	margin-top: 2em;
+}
+
+.close {
+	position: fixed;
+	top: 1em;
+	right: 1em;
+	color: #ccc;
+	font-size: 2em;
+}
+.close:hover,
+.close:active {
+	color: #fff;
+	text-decoration: none;
+}
+
+
+@media (max-width: 480px) {
+	header h1 { font-size: 2em; }
+	header p {font-size: 1em; }
+}

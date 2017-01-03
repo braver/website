@@ -26,10 +26,10 @@
 				<path d="M100,50 L50,100" id="Line" stroke="#ffffff" stroke-width="1" stroke-linecap="square" fill="none"></path>
 				<path d="M99,50 L1,50" id="Line" stroke="#ffffff" stroke-width="1" stroke-linecap="square" fill="none"></path>
 			</svg>
-			<div class="title">
+			<header>
 				<h1>Koen Lageveen</h1>
 				<p>Photographer</p>
-			</div>
+			</header>
 		</div>
 		<div class="slide">
 			<img src="photos/1.jpg" alt="">
@@ -45,36 +45,55 @@
 		</div>
 	</div>
 </div>
-<div class="footer">
-	<span>Koen Lageveen</span> <span>· Photographer</span>
-</div>
-
 <span class="previous" onclick="mySwipe.prev()"></span>
 <span class="next" onclick="mySwipe.next()"></span>
 
+<article class="about" id="about">
+	<h2>About</h2>
+	<p>I'm a designer based in Delft, The Netherlands. All images on this site are shot on film and digitally finished using darkroom methods (no cropping, no editing).</p>
+	<p>My <a href="tumblr.koenlageveen.nl">Tumblr</a> is regularly updated with new Polaroids. Check <a href="https://www.instagram.com/koen_l/">Instagram</a> for random iPhone shots.</p>
+	<p class="signature">
+		<svg width="249px" height="117px" viewBox="36 33 498 234" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+			<path d="M149.121094,33.8320312 C149.121094,33.8320312 20.2376234,156.514761 38.6054688,211.378906 C51.5394535,241.979025 143.144531,185.710938 143.144531,185.710938" id="Path" stroke="#CCCCCC" stroke-width="1" fill="none"></path>
+			<path d="M287.851563,56.5195312 C287.851563,56.5195312 233.523438,105.035156 208.847656,133.9375 C184.171875,162.839844 146.773438,209.050781 169.632813,233.125 C192.492188,257.199219 245.144531,216.253906 245.144531,216.253906" id="Path-2" stroke="#CCCCCC" stroke-width="1" fill="none"></path>
+			<path d="M269.683594,160.347656 C269.683594,160.347656 301.522074,154.107791 308.560637,194.274452 C312.732157,221.589914 286.142069,240.89427 270.185038,251.292708 C254.228006,261.691145 231.304688,265.550781 231.304688,265.550781" id="Path-3" stroke="#CCCCCC" stroke-width="1" fill="none"></path>
+			<path d="M92.932042,229.116604 C92.932042,229.116604 87.3326109,229.554235 124.677114,217.872856 C162.021616,206.191478 339.820312,169.085938 395.425781,159.929688 C451.03125,150.773438 532.585937,139.550781 532.585937,139.550781" id="Path-4" stroke="#CCCCCC" stroke-width="1" fill="none"></path>
+		</svg><br>
+		Koen Lageveen
+	</p>
+	<a href="#" class="close" onclick="closeAbout()">&times;</a>
+</article>
+
+<footer>
+	<span>Koen Lageveen</span> <span>· <a href="#" onclick="openAbout()">About</a></span>
+</footer>
+
 <script src='swipe.js'></script>
 <script>
-	/* eslint-disable */
-	window.mySwipe = new Swipe(document.getElementById('swipe'), {
-	// startSlide: 2,
-	speed: 500,
-	// auto: 3000,
-	continuous: false,
-	// disableScroll: false,
-	// stopPropagation: false,
-	callback: function(index, elem) {
-		if (index > 0) {
-			document.body.classList.add("initialized");
-		}  else {
-			document.body.classList.remove("initialized");
+	/* global window, document, Swipe */
+
+	window.openAbout = function() {
+		document.getElementById("about").classList.add("visible");
+	};
+	window.closeAbout = function() {
+		document.getElementById("about").classList.remove("visible");
+	};
+
+	window.mySwipe = new Swipe(document.getElementById("swipe"), {
+		speed: 500,
+		continuous: false,
+		callback: function(index) {
+			if (index > 0) {
+				document.body.classList.add("initialized");
+			} else {
+				document.body.classList.remove("initialized");
+			}
+			if (index === window.mySwipe.getNumSlides() - 1) {
+				document.body.classList.add("at-end");
+			} else {
+				document.body.classList.remove("at-end");
+			}
 		}
-		if (index === window.mySwipe.getNumSlides() - 1) {
-			document.body.classList.add("at-end");
-		}  else {
-			document.body.classList.remove("at-end");
-		}
-	},
-	// transitionEnd: function(index, elem) {}
 	});
 </script>
 
