@@ -226,6 +226,9 @@ article > * {
 	max-width: 33rem;
 	margin: 0 auto;
 }
+article h2 {
+	color: #fff;
+}
 article p {
 	margin: 1em auto;
 }
@@ -246,16 +249,12 @@ article p {
 
 .close {
 	position: fixed;
-	top: 1em;
-	right: 1em;
-	color: #ccc;
-	font-size: 2em;
+	top: 2em;
+	right: 2em;
 }
-.close:hover,
-.close:active {
-	color: #fff;
-	text-decoration: none;
-}
+.close path { stroke: #ccc; }
+.close:hover path,
+.close:active path { stroke: #fff; }
 
 
 @media (max-width: 480px) {
