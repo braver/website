@@ -32,9 +32,9 @@
 				<p>Photographer</p>
 			</header>
 		</div>
-		<div class="slide">
+		<!-- <div class="slide">
 			<img src="photos/1.jpg" alt="">
-		</div>
+		</div> -->
 	</div>
 </div>
 <span class="previous" onclick="mySwipe.prev()"></span>
@@ -69,8 +69,9 @@
 
 
 <script src='swipe.js'></script>
+<script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
 <script>
-	/* global window, document, Swipe */
+	/* global window, document, Swipe, $ */
 
 	window.openAbout = function() {
 		document.getElementById("about").classList.add("visible");
@@ -95,6 +96,23 @@
 			}
 		}
 	});
+
+	$(document).ready(function() {
+		$.getJSON("photos.json", function(data) {
+			$.each(data, function(k, v) {
+				$(".swipe-wrap").append("<div class='slide'><img src='photos/"
+					+ v.file + "-1920.jpg' srcset='photos/"
+					+ v.file + "-750.jpg 750w, photos/"
+					+ v.file + "-1334.jpg 1334w, photos/"
+					+ v.file + "-1920.jpg 1920w, photos/"
+					+ v.file + "-2048.jpg 2048w, photos/"
+					+ v.file + "-2560.jpg 2560w, photos/"
+					+ v.file + "-3840.jpg 3840w, photos/"
+					+ v.file + "-5120.jpg 5120w' alt=''></div>");
+			});
+		});
+	});
+
 </script>
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
