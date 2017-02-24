@@ -34,13 +34,24 @@
 		</div>
 		<!-- photos go here -->
 
-		<div class='slide'><img alt='' src='photos/303-Scan-121223-0001-1920.jpg' srcset='photos/303-Scan-121223-0001-750.jpg 750w, photos/303-Scan-121223-0001-1334.jpg 1334w, photos/303-Scan-121223-0001-1920.jpg 1920w, photos/303-Scan-121223-0001-2048.jpg 2048w, photos/303-Scan-121223-0001-2560.jpg 2560w, photos/303-Scan-121223-0001-3840.jpg 3840w, photos/303-Scan-121223-0001-5120.jpg 5120w'></div>
+		<div class='slide'><img alt='' src='photos/1-258-2017-01-29-0001-1920.jpg' srcset='photos/1-258-2017-01-29-0001-750.jpg 750w, photos/1-258-2017-01-29-0001-1334.jpg 1334w, photos/1-258-2017-01-29-0001-1920.jpg 1920w, photos/1-258-2017-01-29-0001-2048.jpg 2048w, photos/1-258-2017-01-29-0001-2560.jpg 2560w, photos/1-258-2017-01-29-0001-3840.jpg 3840w, photos/1-258-2017-01-29-0001-5120.jpg 5120w'></div>
+		<div class='slide'><img alt='' src='photos/2-28-2017-01-29-0002-1920.jpg' srcset='photos/2-28-2017-01-29-0002-750.jpg 750w, photos/2-28-2017-01-29-0002-1334.jpg 1334w, photos/2-28-2017-01-29-0002-1920.jpg 1920w, photos/2-28-2017-01-29-0002-2048.jpg 2048w, photos/2-28-2017-01-29-0002-2560.jpg 2560w, photos/2-28-2017-01-29-0002-3840.jpg 3840w, photos/2-28-2017-01-29-0002-5120.jpg 5120w'></div>
+		<div class='slide'><img alt='' src='photos/3-30-2017-01-29-0001-1920.jpg' srcset='photos/3-30-2017-01-29-0001-750.jpg 750w, photos/3-30-2017-01-29-0001-1334.jpg 1334w, photos/3-30-2017-01-29-0001-1920.jpg 1920w, photos/3-30-2017-01-29-0001-2048.jpg 2048w, photos/3-30-2017-01-29-0001-2560.jpg 2560w, photos/3-30-2017-01-29-0001-3840.jpg 3840w, photos/3-30-2017-01-29-0001-5120.jpg 5120w'></div>
+		<div class='slide'><img alt='' src='photos/4-35-2017-01-29-0001-1920.jpg' srcset='photos/4-35-2017-01-29-0001-750.jpg 750w, photos/4-35-2017-01-29-0001-1334.jpg 1334w, photos/4-35-2017-01-29-0001-1920.jpg 1920w, photos/4-35-2017-01-29-0001-2048.jpg 2048w, photos/4-35-2017-01-29-0001-2560.jpg 2560w, photos/4-35-2017-01-29-0001-3840.jpg 3840w, photos/4-35-2017-01-29-0001-5120.jpg 5120w'></div>
+		<div class='slide'><img alt='' src='photos/5-60-2017-01-29-0001-1920.jpg' srcset='photos/5-60-2017-01-29-0001-750.jpg 750w, photos/5-60-2017-01-29-0001-1334.jpg 1334w, photos/5-60-2017-01-29-0001-1920.jpg 1920w, photos/5-60-2017-01-29-0001-2048.jpg 2048w, photos/5-60-2017-01-29-0001-2560.jpg 2560w, photos/5-60-2017-01-29-0001-3840.jpg 3840w, photos/5-60-2017-01-29-0001-5120.jpg 5120w'></div>
 
 		<!-- end of photos -->
 	</div>
 </div>
 <span class="previous" onclick="mySwipe.prev()"></span>
 <span class="next" onclick="mySwipe.next()"></span>
+<span class="fullscreen" onclick="toggleFullscreen()">
+	<svg width="43px" height="43px" viewBox="4 3 43 43" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	    <path d="M5,5 L45,5" id="Line" stroke="#FFFFFF" stroke-width="1" stroke-linecap="square" fill="none"></path>
+	    <path d="M45,5 L45,45" id="Line" stroke="#FFFFFF" stroke-width="1" stroke-linecap="square" fill="none"></path>
+	    <path d="M44.5,5.5 L5.5,44.5" id="Line" stroke="#FFFFFF" stroke-width="1" stroke-linecap="square" fill="none"></path>
+	</svg>
+</span>
 
 
 <article class="about" id="about">
@@ -71,14 +82,24 @@
 
 
 <script src='swipe.js'></script>
+<script src="screenfull.min.js"></script>
 <script>
-	/* global window, document, Swipe*/
+	/* global window, document, Swipe, screenfull*/
 
 	window.openAbout = function() {
 		document.getElementById("about").classList.add("visible");
 	};
 	window.closeAbout = function() {
 		document.getElementById("about").classList.remove("visible");
+	};
+	window.toggleFullscreen = function() {
+		if (screenfull.isFullscreen) {
+			screenfull.exit();
+			document.body.classList.remove("is-fullscreen");
+		} else if (screenfull.enabled) {
+			screenfull.request();
+			document.body.classList.add("is-fullscreen");
+		}
 	};
 
 	window.mySwipe = new Swipe(document.getElementById("swipe"), {

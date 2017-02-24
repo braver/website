@@ -2,6 +2,16 @@
 	0%   { opacity: 0; }
 	100% { opacity: 1; }
 }
+@keyframes fadeInBlur {
+	0%   {
+		-webkit-backdrop-filter: blur(0);
+		opacity: 0;
+	}
+	100% {
+		-webkit-backdrop-filter: blur(4px);
+		opacity: 1;
+	}
+}
 @keyframes slide {
 	0% {
 		bottom: -2vh;
@@ -86,7 +96,7 @@ h2 {
 	max-height: 100%;
 }
 .slide.cover {
-	background: #000 url(photos/cover.jpg) no-repeat center center;
+	background: #000 url(cover.jpg) no-repeat center center;
 	-webkit-background-size: cover;
 	background-size: cover;
 	animation: 1s fadeIn ease-out;
@@ -138,8 +148,8 @@ h2 {
 	height: 3em;
 	margin: -1.5em 1.5em 0 1.5em;
 	float: left;
-	border-top: 1px solid rgba(255,255,255,.1);
-	border-left: 1px solid rgba(255,255,255,.1);
+	border-top: 1px solid hsl(0,0%,20%);
+	border-left: 1px solid hsl(0,0%,20%);
 	transform: rotate(-45deg);
 	transition: border-color .9s ease-in-out;
 }
@@ -149,12 +159,40 @@ h2 {
 }
 .previous:hover::after,
 .next:hover::after {
-	border-color: rgba(255,255,255,.6);
+	border-color: hsl(0,0%,60%);
 	transition: border-color .3s ease-in-out;
 }
 .previous:active::after,
 .next:active::after {
-	border-color: rgb(255,255,255);
+	border-color: hsl(0,0%,100%);
+}
+
+.fullscreen {
+	width: 50px;
+	height: 50px;
+	display: block;
+	position: fixed;
+	top: 5px;
+	right: 5px;
+	cursor: pointer;
+	text-align: right;
+}
+.fullscreen svg {
+	transition: all 1.5s ease-in-out;
+}
+.is-fullscreen .fullscreen svg {
+	transform: rotate(-180deg);
+}
+.fullscreen path {
+	stroke: hsl(0,0%,20%);
+	transition: stroke .9s ease-in-out;
+}
+.fullscreen:hover path {
+	stroke: hsl(0,0%,60%);
+	transition: stroke .3s ease-in-out;
+}
+.fullscreen:active path {
+	stroke: hsl(0,0%,100%);
 }
 
 .playbutton {
@@ -165,11 +203,11 @@ h2 {
 	transition: stroke .9s ease-in-out;
 }
 .playbutton:hover path {
-	stroke: rgba(255,255,255,.6);
+	stroke: hsl(0,0%,60%);
 	transition: stroke .3s ease-in-out;
 }
 .playbutton:active path {
-	stroke: rgb(255,255,255);
+	stroke: hsl(0,0%,100%);
 }
 
 header {
@@ -237,6 +275,7 @@ article p {
 	display: none;
 	z-index: 2;
 	animation: .25s fadeIn ease-out;
+	-webkit-backdrop-filter: blur(4px);
 }
 .about.visible {
 	display: block;
@@ -252,9 +291,17 @@ article p {
 	top: 2em;
 	right: 2em;
 }
-.close path { stroke: #ccc; }
-.close:hover path,
-.close:active path { stroke: #fff; }
+.close path {
+	stroke: hsl(0,0%,20%);
+	transition: stroke .9s ease-in-out;
+}
+.close:hover path {
+	stroke: hsl(0,0%,60%);
+	transition: stroke .9s ease-in-out;
+}
+.close:active path {
+	stroke: hsl(0,0%,100%);
+}
 
 
 @media (max-width: 480px) {
