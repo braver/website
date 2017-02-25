@@ -1,14 +1,25 @@
+/* stylelint-disable property-no-vendor-prefix */
+
 @keyframes fadeIn {
 	0%   { opacity: 0; }
 	100% { opacity: 1; }
 }
-@keyframes fadeInBlur {
-	0%   {
-		-webkit-backdrop-filter: blur(0);
-		opacity: 0;
+@keyframes blurOut {
+	to {
+		filter: blur(4px) grayscale(100%);
+		transform: scale(.9);
+		opacity: .2;
+	}
+}
+@keyframes returnFromBlur {
+	0% {
+		filter: blur(4px) grayscale(100%);
+		transform: scale(.9);
+		opacity: .2;
 	}
 	100% {
-		-webkit-backdrop-filter: blur(4px);
+		filter: none;
+		transform: none;
 		opacity: 1;
 	}
 }
@@ -41,6 +52,7 @@ html {
 	background: #000;
 	height: 100%;
 }
+
 body {
 	height: 100%;
 	font-family: Avenir, Helvetica, sans-serif;
@@ -49,23 +61,24 @@ body {
 }
 
 a {
-	color: #56BC8A;
+	color: #56bc8a;
 	text-decoration: none;
 }
 a:hover,
 a:active {
-	color: #5CC993;
+	color: #5cc993;
 	text-decoration: underline;
 }
 
 h1 {
 	font-size: 3em;
-	font-family: 'Josefin Slab', Georgia, serif;
+	font-family: "Josefin Slab", Georgia, serif;
 }
 h2 {
 	font-size: 2em;
-	font-family: 'Josefin Slab', Georgia, serif;
+	font-family: "Josefin Slab", Georgia, serif;
 }
+
 .swipe {
 	overflow: hidden;
 	visibility: hidden;
@@ -96,7 +109,7 @@ h2 {
 	max-height: 100%;
 }
 .slide.cover {
-	background: #000 url(cover.jpg) no-repeat center center;
+	background: #000 url("cover.jpg") no-repeat center center;
 	-webkit-background-size: cover;
 	background-size: cover;
 	animation: 1s fadeIn ease-out;
@@ -116,6 +129,15 @@ h2 {
 	z-index: -1;
 	pointer-events: none;
 }
+.about-is-open .slide img {
+	animation: .4s blurOut ease-in-out;
+	animation-fill-mode: forwards;
+}
+.about-is-closed .slide img {
+	animation: .4s returnFromBlur ease-in-out;
+	animation-fill-mode: forwards;
+}
+
 .previous,
 .next {
 	display: none;
@@ -125,17 +147,22 @@ h2 {
 	top: 0;
 	left: 0;
 	cursor: pointer;
+	transition: opacity .4s ease-in-out;
 }
 .initialized .previous,
 .initialized .next {
 	display: block;
 }
-.at-end .next {
-	display: none;
+.about-is-open .previous,
+.about-is-open .next {
+	opacity: 0;
 }
 .next {
 	left: auto;
 	right: 0;
+}
+.at-end .next {
+	display: none;
 }
 .previous::after,
 .next::after {
@@ -148,10 +175,10 @@ h2 {
 	height: 3em;
 	margin: -1.5em 1.5em 0 1.5em;
 	float: left;
-	border-top: 1px solid hsl(0,0%,20%);
-	border-left: 1px solid hsl(0,0%,20%);
+	border-top: 1px solid hsl(0, 0%, 20%);
+	border-left: 1px solid hsl(0, 0%, 20%);
 	transform: rotate(-45deg);
-	transition: border-color .9s ease-in-out;
+	transition: border-color .8s ease-in-out;
 }
 .next::after {
 	float: right;
@@ -159,23 +186,30 @@ h2 {
 }
 .previous:hover::after,
 .next:hover::after {
-	border-color: hsl(0,0%,60%);
+	border-color: hsl(0, 0%, 60%);
 	transition: border-color .3s ease-in-out;
 }
 .previous:active::after,
 .next:active::after {
-	border-color: hsl(0,0%,100%);
+	border-color: hsl(0, 0%, 100%);
 }
 
 .fullscreen {
 	width: 50px;
 	height: 50px;
-	display: block;
+	display: none;
 	position: fixed;
 	top: 5px;
 	right: 5px;
 	cursor: pointer;
 	text-align: right;
+	transition: opacity .4s ease-in-out;
+}
+.initialized .fullscreen {
+	display: block;
+}
+.about-is-open .fullscreen {
+	opacity: 0;
 }
 .fullscreen svg {
 	transition: all 1.5s ease-in-out;
@@ -184,15 +218,15 @@ h2 {
 	transform: rotate(-180deg);
 }
 .fullscreen path {
-	stroke: hsl(0,0%,20%);
-	transition: stroke .9s ease-in-out;
+	stroke: hsl(0, 0%, 20%);
+	transition: stroke .8s ease-in-out;
 }
 .fullscreen:hover path {
-	stroke: hsl(0,0%,60%);
-	transition: stroke .3s ease-in-out;
+	stroke: hsl(0, 0%, 60%);
+	transition: stroke .4s ease-in-out;
 }
 .fullscreen:active path {
-	stroke: hsl(0,0%,100%);
+	stroke: hsl(0, 0%, 100%);
 }
 
 .playbutton {
@@ -200,14 +234,14 @@ h2 {
 	cursor: pointer;
 }
 .playbutton path {
-	transition: stroke .9s ease-in-out;
+	transition: stroke .8s ease-in-out;
 }
 .playbutton:hover path {
-	stroke: hsl(0,0%,60%);
-	transition: stroke .3s ease-in-out;
+	stroke: hsl(0, 0%, 60%);
+	transition: stroke .4s ease-in-out;
 }
 .playbutton:active path {
-	stroke: hsl(0,0%,100%);
+	stroke: hsl(0, 0%, 100%);
 }
 
 header {
@@ -219,7 +253,7 @@ header {
 	transition: all 1s linear;
 }
 header h1 {
-	font-family: 'Josefin Slab', Georgia, serif;
+	font-family: "Josefin Slab", Georgia, serif;
 	animation: 1s slide ease-in-out;
 	position: relative;
 }
@@ -234,6 +268,7 @@ header p {
 	position: relative;
 	line-height: 1;
 }
+
 footer {
 	position: fixed;
 	right: 1em;
@@ -241,6 +276,7 @@ footer {
 	font-family: Avenir, Helvetica, sans-serif;
 	display: none;
 	animation: .5s slideFooter ease-in-out;
+	transition: opacity .2s ease-in-out;
 }
 footer span:last-child {
 	color: #ccc;
@@ -248,37 +284,35 @@ footer span:last-child {
 .initialized footer {
 	display: block;
 }
-
-article {
-	position: fixed;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	background: rgba(0,0,0,.9);
-	padding: 3em;
-	color: #ccc;
-	overflow: auto;
-}
-article > * {
-	max-width: 33rem;
-	margin: 0 auto;
-}
-article h2 {
-	color: #fff;
-}
-article p {
-	margin: 1em auto;
+.about-is-open footer {
+	opacity: 0;
 }
 
 .about {
 	display: none;
 	z-index: 2;
-	animation: .25s fadeIn ease-out;
-	-webkit-backdrop-filter: blur(4px);
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	padding: 3em;
+	color: #ccc;
+	overflow: auto;
 }
-.about.visible {
+.about-is-open .about {
 	display: block;
+	animation: .4s fadeIn ease-out;
+}
+.about > * {
+	max-width: 33rem;
+	margin: 0 auto;
+}
+.about h2 {
+	color: #fff;
+}
+.about p {
+	margin: 1em auto;
 }
 
 .signature {
@@ -290,21 +324,22 @@ article p {
 	position: fixed;
 	top: 2em;
 	right: 2em;
+	opacity: .4;
+	transition: opacity .8s ease-in-out;
 }
-.close path {
-	stroke: hsl(0,0%,20%);
-	transition: stroke .9s ease-in-out;
+.close:hover {
+	transition: opacity .4s ease-in-out;
+	opacity: .8;
 }
-.close:hover path {
-	stroke: hsl(0,0%,60%);
-	transition: stroke .9s ease-in-out;
+.close:active {
+	opacity: 1;
 }
-.close:active path {
-	stroke: hsl(0,0%,100%);
-}
-
 
 @media (max-width: 480px) {
-	header h1 { font-size: 2em; }
-	header p {font-size: 1em; }
+	header h1 {
+		font-size: 2em;
+	}
+	header p {
+		font-size: 1em;
+	}
 }

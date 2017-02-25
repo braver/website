@@ -8,10 +8,7 @@
 
 	<link rel="icon" type="image/png" href="favicon.png">
 
-	<!-- YUI reset -->
 	<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.18.1/build/cssreset/cssreset-min.css">
-
-	<!-- Styles -->
 	<link rel="stylesheet" href="stylesheet.css">
 	<link href="https://fonts.googleapis.com/css?family=Josefin+Slab:300" rel="stylesheet">
 
@@ -45,7 +42,7 @@
 </div>
 <span class="previous" onclick="mySwipe.prev()"></span>
 <span class="next" onclick="mySwipe.next()"></span>
-<span class="fullscreen" onclick="toggleFullscreen()">
+<span class="fullscreen" id="fullscreen-button" onclick="toggleFullscreen()">
 	<svg width="43px" height="43px" viewBox="4 3 43 43" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 	    <path d="M5,5 L45,5" id="Line" stroke="#FFFFFF" stroke-width="1" stroke-linecap="square" fill="none"></path>
 	    <path d="M45,5 L45,45" id="Line" stroke="#FFFFFF" stroke-width="1" stroke-linecap="square" fill="none"></path>
@@ -86,11 +83,19 @@
 <script>
 	/* global window, document, Swipe, screenfull*/
 
+	window.onload = function() {
+		if (!screenfull.enabled) {
+			document.getElementById("fullscreen-button").remove();
+		}
+	};
+
 	window.openAbout = function() {
-		document.getElementById("about").classList.add("visible");
+		document.body.classList.add("about-is-open");
+		document.body.classList.remove("about-is-closed");
 	};
 	window.closeAbout = function() {
-		document.getElementById("about").classList.remove("visible");
+		document.body.classList.remove("about-is-open");
+		document.body.classList.add("about-is-closed");
 	};
 	window.toggleFullscreen = function() {
 		if (screenfull.isFullscreen) {
