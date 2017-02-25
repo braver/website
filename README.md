@@ -25,7 +25,7 @@ iPad   2048 × 1536    if @2x and max-width 1024
 5k     5120 × 2880    if @2x and max-width ∞
 
 
-
+```html
 <img alt="" src="img-1920.jpg"
          srcset="img-750.jpg 750w,
                  img-1334.jpg 1334w",
@@ -34,6 +34,7 @@ iPad   2048 × 1536    if @2x and max-width 1024
                  img-2560.jpg 2560w",
                  img-3840.jpg 3840w",
                  img-5120.jpg 5120w">
+```
 
 # building
 
