@@ -132,16 +132,14 @@
 
 	// 27 = esc, 37 = left arrow, 38 = up, 39 = right
 	// http://unixpapa.com/js/key.html
-	// escape should be caught on keypress to prevent exiting fullscreen
 	// left & right don't trigger keypress in safari
-	window.onkeypress = function(event) {
+
+	window.onkeyup = function(event) {
 		if (event.keyCode === 27 && document.body.classList.contains("about-is-open")) {
 			window.closeAbout();
 			event.preventDefault();
 			event.stopPropagation();
 		}
-	};
-	window.onkeyup = function(event) {
 		if (event.keyCode === 37) {
 			window.mySwipe.prev();
 			event.preventDefault();
