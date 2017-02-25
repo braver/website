@@ -112,8 +112,7 @@ h2 {
 	background: #000 url("cover.jpg") no-repeat center center;
 	-webkit-background-size: cover;
 	background-size: cover;
-	animation: 1s fadeIn ease-out;
-	animation-fill-mode: forwards;
+	animation: 1s ease-out forwards fadeIn;
 }
 .slide.cover::after {
 	content: "";
@@ -125,17 +124,15 @@ h2 {
 	left: 0;
 	box-shadow: inset 0 0 40vh #000;
 	background: #000;
-	animation: 6s fadeIn ease-in-out;
+	animation: 6s ease-in-out forwards fadeIn;
 	z-index: -1;
 	pointer-events: none;
 }
 .about-is-open .slide img {
-	animation: .4s blurOut ease-in-out;
-	animation-fill-mode: forwards;
+	animation: .4s ease-in-out forwards blurOut;
 }
 .about-is-closed .slide img {
-	animation: .4s returnFromBlur ease-in-out;
-	animation-fill-mode: forwards;
+	animation: .4s ease-in-out forwards returnFromBlur;
 }
 
 .previous,
@@ -230,8 +227,8 @@ h2 {
 }
 
 .playbutton {
-	animation: 6s fadeIn ease-in-out;
 	cursor: pointer;
+	animation: 6s ease-in-out forwards fadeIn;
 }
 .playbutton path {
 	transition: stroke .8s ease-in-out;
@@ -254,7 +251,7 @@ header {
 }
 header h1 {
 	font-family: "Josefin Slab", Georgia, serif;
-	animation: 1s slide ease-in-out;
+	animation: 1s ease-in-out forwards slide;
 	position: relative;
 }
 header p {
@@ -262,7 +259,7 @@ header p {
 	font-size: 1.333em;
 	font-variant: small-caps;
 	text-transform: lowercase;
-	animation: 2s slide ease-in-out;
+	animation: 2s ease-in-out forwards slide;
 	text-indent: .8em;
 	letter-spacing: .8em;
 	position: relative;
@@ -275,7 +272,7 @@ footer {
 	bottom: .75em;
 	font-family: Avenir, Helvetica, sans-serif;
 	display: none;
-	animation: .5s slideFooter ease-in-out;
+	animation: .5s ease-in-out forwards slideFooter;
 	transition: opacity .2s ease-in-out;
 }
 footer span:last-child {
@@ -302,7 +299,7 @@ footer span:last-child {
 }
 .about-is-open .about {
 	display: block;
-	animation: .4s fadeIn ease-out;
+	animation: .4s ease-out fadeIn;
 }
 .about > * {
 	max-width: 33rem;
