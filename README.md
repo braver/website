@@ -38,6 +38,6 @@ iPad   2048 × 1536    if @2x and max-width 1024
 
 # building
 
-1. Run photos through the resizer
+1. Export to photos in all sizes
 2. Write the base filenames in photos.txt
 3. Run `./build.sh` and put the output in index.html

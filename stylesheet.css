@@ -23,16 +23,6 @@
 		opacity: 1;
 	}
 }
-@keyframes slide {
-	0% {
-		bottom: -2vh;
-		opacity: 0;
-	}
-	100% {
-		bottom: 0;
-		opacity: 1;
-	}
-}
 @keyframes slideFooter {
 	0% {
 		bottom: 0;
@@ -104,29 +94,12 @@ h2 {
 	justify-content: center;
 	flex-direction: column;
 }
-.slide:not(.cover) img {
+.slide img {
 	max-width: 100%;
 	max-height: 100%;
 }
 .slide.cover {
-	background: #000 url("cover.jpg") no-repeat center center;
-	-webkit-background-size: cover;
-	background-size: cover;
-	animation: 1s ease-out forwards fadeIn;
-}
-.slide.cover::after {
-	content: "";
-	display: block;
-	position: absolute;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	box-shadow: inset 0 0 40vh #000;
 	background: #000;
-	animation: 6s ease-in-out forwards fadeIn;
-	z-index: -1;
-	pointer-events: none;
 }
 .about-is-open .slide img {
 	animation: .4s ease-in-out forwards blurOut;
@@ -247,23 +220,39 @@ header {
 	position: absolute;
 	bottom: 20vh;
 	text-shadow: 0 0 .4em #000;
-	transition: all 1s linear;
+	opacity: 0;
+	transition: opacity 1s ease-in-out;
 }
 header h1 {
 	font-family: "Josefin Slab", Georgia, serif;
-	animation: 1s ease-in-out forwards slide;
 	position: relative;
+	bottom: -2vh;
+	opacity: 0;
+	transition: all 1s ease-in-out .5s;
 }
 header p {
 	color: #ccc;
 	font-size: 1.333em;
 	font-variant: small-caps;
 	text-transform: lowercase;
-	animation: 2s ease-in-out forwards slide;
 	text-indent: .8em;
 	letter-spacing: .8em;
 	position: relative;
 	line-height: 1;
+	bottom: -2vh;
+	opacity: 0;
+	transition: all 2s ease-in-out .5s;
+}
+.loaded header {
+	opacity: 1;
+}
+.loaded header h1 {
+	bottom: 0;
+	opacity: 1;
+}
+.loaded header p {
+	bottom: 0;
+	opacity: 1;
 }
 
 footer {
