@@ -92,22 +92,6 @@
 <script>
 	/* global window, document, Swipe, screenfull*/
 
-	window.openAbout = function() {
-		document.body.classList.add("about-is-open");
-		document.body.classList.remove("about-is-closed");
-	};
-	window.closeAbout = function() {
-		document.body.classList.remove("about-is-open");
-		document.body.classList.add("about-is-closed");
-	};
-	window.toggleFullscreen = function() {
-		if (screenfull.isFullscreen) {
-			screenfull.exit();
-		} else if (screenfull.enabled) {
-			screenfull.request();
-		}
-	};
-
 	window.mySwipe = new Swipe(document.getElementById("swipe"), {
 		speed: 800,
 		continuous: false,
@@ -124,6 +108,23 @@
 			}
 		}
 	});
+
+	window.openAbout = function() {
+		// Hide all but current (via window.mySwipe.getPos()) to improve anim performance
+		document.body.classList.add("about-is-open");
+		document.body.classList.remove("about-is-closed");
+	};
+	window.closeAbout = function() {
+		document.body.classList.remove("about-is-open");
+		document.body.classList.add("about-is-closed");
+	};
+	window.toggleFullscreen = function() {
+		if (screenfull.isFullscreen) {
+			screenfull.exit();
+		} else if (screenfull.enabled) {
+			screenfull.request();
+		}
+	};
 
 	window.onload = function() {
 		document.body.classList.add("loaded");
