@@ -1,5 +1,3 @@
-/* stylelint-disable property-no-vendor-prefix */
-
 @keyframes fadeIn {
 	0%   { opacity: 0; }
 	100% { opacity: 1; }
@@ -67,6 +65,40 @@ h1 {
 h2 {
 	font-size: 2em;
 	font-family: "Josefin Slab", Georgia, serif;
+}
+
+.index {
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	height: 33%;
+	margin-bottom: 20vh;
+}
+.index .thumb {
+	flex: 1;
+	background-size: cover;
+	background-position: center;
+	border: 1px solid hsl(0, 0%, 20%);
+	opacity: .8;
+	transition: all .8s ease-in-out;
+}
+.index .thumb:hover {
+	border-color: hsl(0, 0%, 60%);
+	opacity: 1;
+	transition: all .3s ease-in-out;
+}
+.index .thumb:active {
+	border-color: hsl(0, 0%, 100%);
+}
+
+.index .thumb + .thumb {
+	margin-left: 3em;
+}
+.index .thumb.bw {
+	background-image: url("art/bw.jpg");
+}
+.index .thumb.polaroid {
+	background-image: url("art/polaroid.jpg");
 }
 
 .swipe {
@@ -236,7 +268,7 @@ header p {
 	font-variant: small-caps;
 	text-transform: lowercase;
 	text-indent: .8em;
-	letter-spacing: .8em;
+	letter-spacing: .92em;
 	position: relative;
 	line-height: 1;
 	bottom: -2vh;

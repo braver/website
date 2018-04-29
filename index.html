@@ -9,176 +9,28 @@
 	<link rel="icon" type="image/png" href="favicon.png">
 
 	<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.18.1/build/cssreset/cssreset-min.css">
-	<link rel="stylesheet" href="stylesheet.css">
 	<link href="https://fonts.googleapis.com/css?family=Josefin+Slab:300" rel="stylesheet">
+	<link rel="stylesheet" href="stylesheet.css">
 
 </head>
 <body>
 
 
-<div class="swipe slideshow" id="swipe">
-	<div class="swipe-wrap">
-		<div class="slide cover">
-			<svg class="playbutton" onclick="mySwipe.next()" width="101px" height="102px" viewBox="0 -1 101 102" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-				<path d="M50,0 L100,50" id="Line" stroke="#ffffff" stroke-width="1" stroke-linecap="square" fill="none"></path>
-				<path d="M100,50 L50,100" id="Line" stroke="#ffffff" stroke-width="1" stroke-linecap="square" fill="none"></path>
-				<path d="M99,50 L1,50" id="Line" stroke="#ffffff" stroke-width="1" stroke-linecap="square" fill="none"></path>
-			</svg>
-			<header>
-				<h1>Koen Lageveen</h1>
-				<p>Photographer</p>
-			</header>
-		</div>
-		<!-- photos go here -->
-
-		<div class='slide'><img alt='' src='photos/1-1920.jpg' srcset='photos/1-750.jpg 878w, photos/1-1920.jpg 2048w, photos/1-2560.jpg 2688w, photos/1-5120.jpg 5248w'></div>
-		<div class='slide'><img alt='' src='photos/2-1920.jpg' srcset='photos/2-750.jpg 878w, photos/2-1920.jpg 2048w, photos/2-2560.jpg 2688w, photos/2-5120.jpg 5248w'></div>
-		<div class='slide'><img alt='' src='photos/4-1920.jpg' srcset='photos/4-750.jpg 878w, photos/4-1920.jpg 2048w, photos/4-2560.jpg 2688w, photos/4-5120.jpg 5248w'></div>
-		<div class='slide'><img alt='' src='photos/5-1920.jpg' srcset='photos/5-750.jpg 878w, photos/5-1920.jpg 2048w, photos/5-2560.jpg 2688w, photos/5-5120.jpg 5248w'></div>
-		<div class='slide'><img alt='' src='photos/6-1920.jpg' srcset='photos/6-750.jpg 878w, photos/6-1920.jpg 2048w, photos/6-2560.jpg 2688w, photos/6-5120.jpg 5248w'></div>
-		<div class='slide'><img alt='' src='photos/7-1920.jpg' srcset='photos/7-750.jpg 878w, photos/7-1920.jpg 2048w, photos/7-2560.jpg 2688w, photos/7-5120.jpg 5248w'></div>
-		<div class='slide'><img alt='' src='photos/8-1920.jpg' srcset='photos/8-750.jpg 878w, photos/8-1920.jpg 2048w, photos/8-2560.jpg 2688w, photos/8-5120.jpg 5248w'></div>
-		<div class='slide'><img alt='' src='photos/9-1920.jpg' srcset='photos/9-750.jpg 878w, photos/9-1920.jpg 2048w, photos/9-2560.jpg 2688w, photos/9-5120.jpg 5248w'></div>
-		<div class='slide'><img alt='' src='photos/10-1920.jpg' srcset='photos/10-750.jpg 878w, photos/10-1920.jpg 2048w, photos/10-2560.jpg 2688w, photos/10-5120.jpg 5248w'></div>
-		<div class='slide'><img alt='' src='photos/11-1920.jpg' srcset='photos/11-750.jpg 878w, photos/11-1920.jpg 2048w, photos/11-2560.jpg 2688w, photos/11-5120.jpg 5248w'></div>
-		<div class='slide'><img alt='' src='photos/12-1920.jpg' srcset='photos/12-750.jpg 878w, photos/12-1920.jpg 2048w, photos/12-2560.jpg 2688w, photos/12-5120.jpg 5248w'></div>
-		<div class='slide'><img alt='' src='photos/13-1920.jpg' srcset='photos/13-750.jpg 878w, photos/13-1920.jpg 2048w, photos/13-2560.jpg 2688w, photos/13-5120.jpg 5248w'></div>
-		<div class='slide'><img alt='' src='photos/14-1920.jpg' srcset='photos/14-750.jpg 878w, photos/14-1920.jpg 2048w, photos/14-2560.jpg 2688w, photos/14-5120.jpg 5248w'></div>
-		<div class='slide'><img alt='' src='photos/15-1920.jpg' srcset='photos/15-750.jpg 878w, photos/15-1920.jpg 2048w, photos/15-2560.jpg 2688w, photos/15-5120.jpg 5248w'></div>
-
-		<!-- end of photos -->
+<div class="slide cover">
+	<div class="index">
+		<a href="bw.html" class="thumb bw"></a>
+		<a href="polaroid.html" class="thumb polaroid"></a>
 	</div>
+	<header>
+		<h1>Koen Lageveen</h1>
+		<p>Photographs</p>
+	</header>
 </div>
-<span class="previous" onclick="mySwipe.prev()"></span>
-<span class="next" onclick="mySwipe.next()"></span>
-<span class="fullscreen" id="fullscreen-button" onclick="toggleFullscreen()">
-	<svg width="43px" height="43px" viewBox="4 3 43 43" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-		<path d="M5,5 L45,5" id="Line" stroke="#FFFFFF" stroke-width="1" stroke-linecap="square" fill="none"></path>
-		<path d="M45,5 L45,45" id="Line" stroke="#FFFFFF" stroke-width="1" stroke-linecap="square" fill="none"></path>
-		<path d="M44.5,5.5 L5.5,44.5" id="Line" stroke="#FFFFFF" stroke-width="1" stroke-linecap="square" fill="none"></path>
-	</svg>
-</span>
-
-
-<article class="about" id="about">
-	<h2>About</h2>
-	<p>I'm a designer based in Delft, The Netherlands. All images on this site are shot on film and digitally finished using darkroom methods (no cropping, no editing).</p>
-	<p>My <a href="http://blog.koenlageveen.nl">Tumblr</a> is regularly updated with new Polaroids. Check <a href="https://www.instagram.com/koen_l/">Instagram</a> for random iPhone shots.</p>
-	<p class="signature">
-		<svg width="249px" height="117px" viewBox="36 33 498 234" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-			<path d="M149.121094,33.8320312 C149.121094,33.8320312 20.2376234,156.514761 38.6054688,211.378906 C51.5394535,241.979025 143.144531,185.710938 143.144531,185.710938" id="Path" stroke="#CCCCCC" stroke-width="1" fill="none"></path>
-			<path d="M287.851563,56.5195312 C287.851563,56.5195312 233.523438,105.035156 208.847656,133.9375 C184.171875,162.839844 146.773438,209.050781 169.632813,233.125 C192.492188,257.199219 245.144531,216.253906 245.144531,216.253906" id="Path-2" stroke="#CCCCCC" stroke-width="1" fill="none"></path>
-			<path d="M269.683594,160.347656 C269.683594,160.347656 301.522074,154.107791 308.560637,194.274452 C312.732157,221.589914 286.142069,240.89427 270.185038,251.292708 C254.228006,261.691145 231.304688,265.550781 231.304688,265.550781" id="Path-3" stroke="#CCCCCC" stroke-width="1" fill="none"></path>
-			<path d="M92.932042,229.116604 C92.932042,229.116604 87.3326109,229.554235 124.677114,217.872856 C162.021616,206.191478 339.820312,169.085938 395.425781,159.929688 C451.03125,150.773438 532.585937,139.550781 532.585937,139.550781" id="Path-4" stroke="#CCCCCC" stroke-width="1" fill="none"></path>
-		</svg><br>
-		Koen Lageveen
-	</p>
-	<a href="#" class="close" onclick="closeAbout()">
-		<svg width="25px" height="25px" viewBox="-1 -1 102 102" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-			<path d="M0,0 L100,100" id="Line" stroke="#FFFFFF" stroke-width="2" stroke-linecap="square" fill="none"></path>
-			<path d="M100,0 L0,100" id="Line" stroke="#FFFFFF" stroke-width="2" stroke-linecap="square" fill="none"></path>
-		</svg>
-	</a>
-</article>
-
-
-<footer>
-	<span>Koen Lageveen</span> <span>· <a href="#" onclick="openAbout()">About</a></span>
-</footer>
 
 
 <script src="screenfull.min.js"></script>
 <script src="swipe.min.js"></script>
-<script>
-	/* global window, document, Swipe, screenfull*/
-
-	window.mySwipe = new Swipe(document.getElementById("swipe"), {
-		speed: 800,
-		continuous: false,
-		callback: function(index) {
-			if (index > 0) {
-				document.body.classList.add("initialized");
-			} else {
-				document.body.classList.remove("initialized");
-			}
-			if (index === window.mySwipe.getNumSlides() - 1) {
-				document.body.classList.add("at-end");
-			} else {
-				document.body.classList.remove("at-end");
-			}
-		}
-	});
-
-	window.openAbout = function() {
-		// Hide all but current (via window.mySwipe.getPos()) to improve anim performance
-		document.body.classList.add("about-is-open");
-		document.body.classList.remove("about-is-closed");
-	};
-	window.closeAbout = function() {
-		document.body.classList.remove("about-is-open");
-		document.body.classList.add("about-is-closed");
-	};
-	window.toggleFullscreen = function() {
-		if (screenfull.isFullscreen) {
-			screenfull.exit();
-		} else if (screenfull.enabled) {
-			screenfull.request();
-		}
-	};
-
-	window.onload = function() {
-		document.body.classList.add("loaded");
-		if (!screenfull.enabled) {
-			document.getElementById("fullscreen-button").remove();
-		} else {
-			document.addEventListener(screenfull.raw.fullscreenchange, function() {
-				if (screenfull.isFullscreen) {
-					document.body.classList.add("is-fullscreen");
-				} else {
-					document.body.classList.remove("is-fullscreen");
-				}
-			});
-		}
-	};
-
-	// 27 = esc, 37 = left arrow, 38 = up, 39 = right
-	// http://unixpapa.com/js/key.html
-	// left & right don't trigger keypress in safari
-
-	window.onkeyup = function(event) {
-		if (event.keyCode === 27 && document.body.classList.contains("about-is-open")) {
-			window.closeAbout();
-			event.preventDefault();
-			event.stopPropagation();
-		}
-		if (event.keyCode === 37) {
-			window.mySwipe.prev();
-			event.preventDefault();
-			event.stopPropagation();
-		}
-		if (event.keyCode === 39) {
-			window.mySwipe.next();
-			event.preventDefault();
-			event.stopPropagation();
-		}
-		if (event.keyCode === 38) {
-			window.toggleFullscreen();
-			event.preventDefault();
-			event.stopPropagation();
-		}
-	};
-
-</script>
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-86655252-1', 'auto');
-  ga('send', 'pageview');
-</script>
-
+<script src="script.js"></script>
 
 </body>
 </html>
