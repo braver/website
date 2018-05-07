@@ -101,6 +101,24 @@ h2 {
 	background-image: url("art/polaroid.jpg");
 }
 
+.gallery {
+	position: relative;
+	padding: 3em 4em;
+	text-align: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+.gallery .thumb {
+	width: 25%;
+	margin: 0 .5em 1em .5em;
+}
+.gallery .thumb img {
+	max-width: 100%;
+	display: block;
+}
+
 .swipe {
 	overflow: hidden;
 	visibility: hidden;
