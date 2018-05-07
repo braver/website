@@ -1,3 +1,7 @@
+---
+# jekyll scss -> css
+---
+
 @keyframes fadeIn {
 	0%   { opacity: 0; }
 	100% { opacity: 1; }
@@ -95,10 +99,10 @@ h2 {
 	margin-left: 3em;
 }
 .index .thumb.bw {
-	background-image: url("art/bw.jpg");
+	background-image: url("../assets/bw.jpg");
 }
 .index .thumb.polaroid {
-	background-image: url("art/polaroid.jpg");
+	background-image: url("../assets/polaroid.jpg");
 }
 
 .gallery {
