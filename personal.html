@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 <head>
-	<title>Koen Lageveen</title>
+	<title>Koen Lageveen | Personal</title>
 
 	<meta charset="utf-8"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -15,25 +15,41 @@
 <body>
 
 
-<div class="swipe slideshow initialized" id="swipe">
+<div class="swipe slideshow" id="swipe">
 	<div class="swipe-wrap">
 		<div class="slide cover">
-			<nav>
-				<a href="personal.html" class="thumb personal">Personal</a>
-				<a href="#" class="thumb polaroid">Instant Color Studies</a>
-			</nav>
+			<svg class="playbutton" onclick="mySwipe.next()" width="101px" height="102px" viewBox="0 -1 101 102" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+				<path d="M50,0 L100,50" id="Line" stroke="#ffffff" stroke-width="1" stroke-linecap="square" fill="none"></path>
+				<path d="M100,50 L50,100" id="Line" stroke="#ffffff" stroke-width="1" stroke-linecap="square" fill="none"></path>
+				<path d="M99,50 L1,50" id="Line" stroke="#ffffff" stroke-width="1" stroke-linecap="square" fill="none"></path>
+			</svg>
 			<header>
 				<h1>Koen Lageveen</h1>
 				<p>Photographer</p>
 			</header>
-			<footer>
-				<a href="#" onclick="openAbout()">About</a>
-			</footer>
 		</div>
+		<!-- photos go here -->
+
+		<div class='slide'><img alt='' src='photos/1-1920.jpg' srcset='photos/1-750.jpg 878w, photos/1-1920.jpg 2048w, photos/1-2560.jpg 2688w, photos/1-5120.jpg 5248w'></div>
+		<div class='slide'><img alt='' src='photos/2-1920.jpg' srcset='photos/2-750.jpg 878w, photos/2-1920.jpg 2048w, photos/2-2560.jpg 2688w, photos/2-5120.jpg 5248w'></div>
+		<div class='slide'><img alt='' src='photos/4-1920.jpg' srcset='photos/4-750.jpg 878w, photos/4-1920.jpg 2048w, photos/4-2560.jpg 2688w, photos/4-5120.jpg 5248w'></div>
+		<div class='slide'><img alt='' src='photos/5-1920.jpg' srcset='photos/5-750.jpg 878w, photos/5-1920.jpg 2048w, photos/5-2560.jpg 2688w, photos/5-5120.jpg 5248w'></div>
+		<div class='slide'><img alt='' src='photos/6-1920.jpg' srcset='photos/6-750.jpg 878w, photos/6-1920.jpg 2048w, photos/6-2560.jpg 2688w, photos/6-5120.jpg 5248w'></div>
+		<div class='slide'><img alt='' src='photos/7-1920.jpg' srcset='photos/7-750.jpg 878w, photos/7-1920.jpg 2048w, photos/7-2560.jpg 2688w, photos/7-5120.jpg 5248w'></div>
+		<div class='slide'><img alt='' src='photos/8-1920.jpg' srcset='photos/8-750.jpg 878w, photos/8-1920.jpg 2048w, photos/8-2560.jpg 2688w, photos/8-5120.jpg 5248w'></div>
+		<div class='slide'><img alt='' src='photos/9-1920.jpg' srcset='photos/9-750.jpg 878w, photos/9-1920.jpg 2048w, photos/9-2560.jpg 2688w, photos/9-5120.jpg 5248w'></div>
+		<div class='slide'><img alt='' src='photos/10-1920.jpg' srcset='photos/10-750.jpg 878w, photos/10-1920.jpg 2048w, photos/10-2560.jpg 2688w, photos/10-5120.jpg 5248w'></div>
+		<div class='slide'><img alt='' src='photos/11-1920.jpg' srcset='photos/11-750.jpg 878w, photos/11-1920.jpg 2048w, photos/11-2560.jpg 2688w, photos/11-5120.jpg 5248w'></div>
+		<div class='slide'><img alt='' src='photos/12-1920.jpg' srcset='photos/12-750.jpg 878w, photos/12-1920.jpg 2048w, photos/12-2560.jpg 2688w, photos/12-5120.jpg 5248w'></div>
+		<div class='slide'><img alt='' src='photos/13-1920.jpg' srcset='photos/13-750.jpg 878w, photos/13-1920.jpg 2048w, photos/13-2560.jpg 2688w, photos/13-5120.jpg 5248w'></div>
+		<div class='slide'><img alt='' src='photos/14-1920.jpg' srcset='photos/14-750.jpg 878w, photos/14-1920.jpg 2048w, photos/14-2560.jpg 2688w, photos/14-5120.jpg 5248w'></div>
+		<div class='slide'><img alt='' src='photos/15-1920.jpg' srcset='photos/15-750.jpg 878w, photos/15-1920.jpg 2048w, photos/15-2560.jpg 2688w, photos/15-5120.jpg 5248w'></div>
+
+		<!-- end of photos -->
 	</div>
 </div>
-
-
+<span class="previous" onclick="mySwipe.prev()"></span>
+<span class="next" onclick="mySwipe.next()"></span>
 <span class="fullscreen" id="fullscreen-button" onclick="toggleFullscreen()">
 	<svg width="43px" height="43px" viewBox="4 3 43 43" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 		<path d="M5,5 L45,5" id="Line" stroke="#FFFFFF" stroke-width="1" stroke-linecap="square" fill="none"></path>
