@@ -211,7 +211,7 @@ h2 {
 	transform: rotate(-180deg);
 }
 .fullscreen path {
-	stroke: hsl(0, 0%, 20%);
+	stroke: hsl(0, 0%, 30%);
 	transition: stroke .8s ease-in-out;
 }
 .fullscreen:hover path {
@@ -229,7 +229,7 @@ h2 {
 	transform: rotate(180deg);
 }
 .back path {
-	stroke: hsl(0, 0%, 20%);
+	stroke: hsl(0, 0%, 30%);
 	transition: stroke .8s ease-in-out;
 }
 .back:hover path {
@@ -333,6 +333,8 @@ footer span:last-child {
 	line-height: 20vh;
 	text-decoration: none;
 	color: transparent;
+	background: #000 no-repeat center center;
+	background-size: cover;
 }
 .thumb:hover,
 .thumb:active {
@@ -342,10 +344,10 @@ footer span:last-child {
 	transition: all ease-in-out .8s;
 }
 .thumb.polaroid {
-	background-image: url("../photos/1-750.jpg");
+	background-image: url("polaroid.jpg");
 }
 .thumb.personal {
-	background-image: url("../photos/1-750.jpg");
+	background-image: url("personal.jpg");
 }
 .loaded .thumb {
 	opacity: 1;
