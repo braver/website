@@ -17,15 +17,28 @@ window.mySwipe = new Swipe(document.getElementById("swipe"), {
 	}
 });
 
-window.openAbout = function() {
-	// Hide all but current (via window.mySwipe.getPos()) to improve anim performance
+window.openAbout = function(event) {
+	event.preventDefault();
+	console.log(event);
+	var pos = window.mySwipe.getPos().toString();
 	document.body.classList.add("about-is-open");
 	document.body.classList.remove("about-is-closed");
+	document.querySelectorAll('.slide').forEach(function(i) {
+		if (i.dataset.index !== pos) {
+			i.classList.add("not-in-front");
+		} else {
+			i.classList.remove("not-in-front");
+		}
+	})
 };
 window.closeAbout = function() {
 	document.body.classList.remove("about-is-open");
 	document.body.classList.add("about-is-closed");
+	document.querySelectorAll('.slide').forEach(function(i) {
+		i.classList.remove("not-in-front");
+	})
 };
+
 window.toggleFullscreen = function() {
 	if (screenfull.isFullscreen) {
 		screenfull.exit();
