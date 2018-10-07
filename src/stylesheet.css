@@ -85,6 +85,14 @@ h2 {
 	font-family: "Josefin Slab", Georgia, serif;
 }
 
+em {
+	font-style: italic;
+}
+
+article p + p {
+	margin-top: .7em;
+}
+
 .swipe {
 	overflow: hidden;
 	visibility: hidden;
