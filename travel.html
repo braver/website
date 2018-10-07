@@ -1,0 +1,103 @@
+<!doctype html>
+<html>
+<head>
+	<title>Koen Lageveen | Travel</title>
+
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="icon" type="image/png" href="favicon.png">
+
+	<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.18.1/build/cssreset/cssreset-min.css">
+	<link href="https://fonts.googleapis.com/css?family=Josefin+Slab:300" rel="stylesheet">
+	<link rel="stylesheet" href="src/stylesheet.css">
+</head>
+<body>
+
+
+<div class="swipe slideshow" id="swipe">
+	<div class="swipe-wrap">
+		<div class="slide cover">
+			<a href="/" class="back">
+				<svg class="playbutton" onclick="mySwipe.next()" width="43px" height="44px" viewBox="0 -1 101 102" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+					<path d="M50,0 L100,50" id="Line" stroke="#ffffff" stroke-width="1" stroke-linecap="square" fill="none"></path>
+					<path d="M100,50 L50,100" id="Line" stroke="#ffffff" stroke-width="1" stroke-linecap="square" fill="none"></path>
+					<path d="M99,50 L1,50" id="Line" stroke="#ffffff" stroke-width="1" stroke-linecap="square" fill="none"></path>
+				</svg>
+			</a>
+			<p>
+				This is a series shot during my travels along coastal
+				areas like The Wadden and The Canarians.
+			</p>
+			<svg class="playbutton" onclick="mySwipe.next()" width="101px" height="102px" viewBox="0 -1 101 102" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+				<path d="M50,0 L100,50" id="Line" stroke="#ffffff" stroke-width="1" stroke-linecap="square" fill="none"></path>
+				<path d="M100,50 L50,100" id="Line" stroke="#ffffff" stroke-width="1" stroke-linecap="square" fill="none"></path>
+				<path d="M99,50 L1,50" id="Line" stroke="#ffffff" stroke-width="1" stroke-linecap="square" fill="none"></path>
+			</svg>
+			<header>
+				<h1>Koen Lageveen</h1>
+				<p>Photographer</p>
+			</header>
+		</div>
+		<!-- photos go here -->
+
+		<div class='slide'><img alt='' src='travel/1-1920.jpg' srcset='travel/1-750.jpg 878w, travel/1-1920.jpg 2048w, travel/1-2560.jpg 2688w'></div>
+		<div class='slide'><img alt='' src='travel/2-1920.jpg' srcset='travel/2-750.jpg 878w, travel/2-1920.jpg 2048w, travel/2-2560.jpg 2688w'></div>
+		<div class='slide'><img alt='' src='travel/4-1920.jpg' srcset='travel/4-750.jpg 878w, travel/4-1920.jpg 2048w, travel/4-2560.jpg 2688w'></div>
+		<div class='slide'><img alt='' src='travel/5-1920.jpg' srcset='travel/5-750.jpg 878w, travel/5-1920.jpg 2048w, travel/5-2560.jpg 2688w'></div>
+		<div class='slide'><img alt='' src='travel/6-1920.jpg' srcset='travel/6-750.jpg 878w, travel/6-1920.jpg 2048w, travel/6-2560.jpg 2688w'></div>
+		<div class='slide'><img alt='' src='travel/7-1920.jpg' srcset='travel/7-750.jpg 878w, travel/7-1920.jpg 2048w, travel/7-2560.jpg 2688w'></div>
+		<div class='slide'><img alt='' src='travel/8-1920.jpg' srcset='travel/8-750.jpg 878w, travel/8-1920.jpg 2048w, travel/8-2560.jpg 2688w'></div>
+		<div class='slide'><img alt='' src='travel/9-1920.jpg' srcset='travel/9-750.jpg 878w, travel/9-1920.jpg 2048w, travel/9-2560.jpg 2688w'></div>
+		<div class='slide'><img alt='' src='travel/10-1920.jpg' srcset='travel/10-750.jpg 878w, travel/10-1920.jpg 2048w, travel/10-2560.jpg 2688w'></div>
+		<div class='slide'><img alt='' src='travel/11-1920.jpg' srcset='travel/11-750.jpg 878w, travel/11-1920.jpg 2048w, travel/11-2560.jpg 2688w'></div>
+		<div class='slide'><img alt='' src='travel/12-1920.jpg' srcset='travel/12-750.jpg 878w, travel/12-1920.jpg 2048w, travel/12-2560.jpg 2688w'></div>
+
+		<!-- end of photos -->
+	</div>
+</div>
+<span class="previous" onclick="mySwipe.prev()"></span>
+<span class="next" onclick="mySwipe.next()"></span>
+<span class="fullscreen" id="fullscreen-button" onclick="toggleFullscreen()">
+	<svg width="43px" height="43px" viewBox="4 3 43 43" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+		<path d="M5,5 L45,5" id="Line" stroke="#FFFFFF" stroke-width="1" stroke-linecap="square" fill="none"></path>
+		<path d="M45,5 L45,45" id="Line" stroke="#FFFFFF" stroke-width="1" stroke-linecap="square" fill="none"></path>
+		<path d="M44.5,5.5 L5.5,44.5" id="Line" stroke="#FFFFFF" stroke-width="1" stroke-linecap="square" fill="none"></path>
+	</svg>
+</span>
+
+
+<article class="about" id="about">
+	<h2>About</h2>
+	<p>I'm a designer based in Delft, The Netherlands. All images on this site are shot on film and digitally finished using darkroom methods (no cropping, no editing).</p>
+	<p>Also check <a href="https://www.instagram.com/koen_l/">Instagram</a> for mostly random stuff.</p>
+	<p class="signature">
+		<svg width="249px" height="117px" viewBox="36 33 498 234" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+			<path d="M149.121094,33.8320312 C149.121094,33.8320312 20.2376234,156.514761 38.6054688,211.378906 C51.5394535,241.979025 143.144531,185.710938 143.144531,185.710938" id="Path" stroke="#CCCCCC" stroke-width="1" fill="none"></path>
+			<path d="M287.851563,56.5195312 C287.851563,56.5195312 233.523438,105.035156 208.847656,133.9375 C184.171875,162.839844 146.773438,209.050781 169.632813,233.125 C192.492188,257.199219 245.144531,216.253906 245.144531,216.253906" id="Path-2" stroke="#CCCCCC" stroke-width="1" fill="none"></path>
+			<path d="M269.683594,160.347656 C269.683594,160.347656 301.522074,154.107791 308.560637,194.274452 C312.732157,221.589914 286.142069,240.89427 270.185038,251.292708 C254.228006,261.691145 231.304688,265.550781 231.304688,265.550781" id="Path-3" stroke="#CCCCCC" stroke-width="1" fill="none"></path>
+			<path d="M92.932042,229.116604 C92.932042,229.116604 87.3326109,229.554235 124.677114,217.872856 C162.021616,206.191478 339.820312,169.085938 395.425781,159.929688 C451.03125,150.773438 532.585937,139.550781 532.585937,139.550781" id="Path-4" stroke="#CCCCCC" stroke-width="1" fill="none"></path>
+		</svg><br>
+		Koen Lageveen
+	</p>
+	<a href="#" class="close" onclick="closeAbout()">
+		<svg width="25px" height="25px" viewBox="-1 -1 102 102" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+			<path d="M0,0 L100,100" id="Line" stroke="#FFFFFF" stroke-width="2" stroke-linecap="square" fill="none"></path>
+			<path d="M100,0 L0,100" id="Line" stroke="#FFFFFF" stroke-width="2" stroke-linecap="square" fill="none"></path>
+		</svg>
+	</a>
+</article>
+
+
+<footer>
+	<span>Koen Lageveen</span><span> · <a href="/">Home</a> · <a href="about.html" onclick="openAbout(event)">About</a> · <a href="https://www.instagram.com/koen_l/">Instagram</a></span>
+</footer>
+
+
+<script src="src/screenfull.min.js"></script>
+<script src="src/swipe.min.js"></script>
+<script src="src/main.js"></script>
+
+
+</body>
+</html>

@@ -336,26 +336,41 @@ footer span:last-child {
 	line-height: 20vh;
 	text-decoration: none;
 	color: transparent;
+	position: relative;
+	overflow: hidden;
+}
+.thumb::before {
+	content: "";
 	background: #000 no-repeat center center;
 	background-size: cover;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: -1;
+	transition: all 2s ease-in-out .8s;
 }
 .thumb:hover,
 .thumb:active {
 	color: #fff;
 	text-shadow: 0 0 .4em #000;
 	text-decoration: none;
+	will-change: transform;
 	transition: all ease-in-out .8s;
 }
-.thumb.polaroid {
+.thumb.polaroid::before {
 	background-image: url("polaroid.jpg");
 }
-.thumb.personal {
-	background-image: url("personal.jpg");
+.thumb.travel::before {
+	background-image: url("travel.jpg");
 }
 .loaded .thumb {
 	opacity: 1;
 }
-
+.loaded .thumb::before {
+	transform: scale(1.2);
+}
 
 .about {
 	display: none;
