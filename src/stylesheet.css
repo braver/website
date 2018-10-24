@@ -130,6 +130,13 @@ article p + p {
 	max-width: 40em;
 	padding-bottom: 1.4em;
 }
+.slide > .title {
+	color: hsl(0, 0%, 30%);
+	position: absolute;
+	bottom: .75em;
+	font-family: Avenir, Helvetica, sans-serif;
+	font-size: .82em;
+}
 .slide.not-in-front {
 	visibility: hidden;
 }
