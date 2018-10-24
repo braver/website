@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 <head>
-	<title>Koen Lageveen</title>
+	<title>Koen Lageveen | Instant Color Studies</title>
 
 	<meta charset="utf-8"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -12,28 +12,54 @@
 	<link href="https://fonts.googleapis.com/css?family=Josefin+Slab:300" rel="stylesheet">
 	<link rel="stylesheet" href="src/stylesheet.css">
 </head>
-<body class="home">
+<body>
 
 
-<div class="swipe slideshow initialized" id="swipe">
+<div class="swipe slideshow" id="swipe">
 	<div class="swipe-wrap">
 		<div class="slide cover">
-			<nav>
-				<a href="travel.html" class="thumb travel">Travel</a>
-				<a href="polaroid.html" class="thumb polaroid">Instant Color Studies</a>
-			</nav>
+			<a href="/" class="back">
+				<svg class="playbutton" onclick="mySwipe.next()" width="43px" height="44px" viewBox="0 -1 101 102" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+					<path d="M50,0 L100,50" id="Line" stroke="#ffffff" stroke-width="1" stroke-linecap="square" fill="none"></path>
+					<path d="M100,50 L50,100" id="Line" stroke="#ffffff" stroke-width="1" stroke-linecap="square" fill="none"></path>
+					<path d="M99,50 L1,50" id="Line" stroke="#ffffff" stroke-width="1" stroke-linecap="square" fill="none"></path>
+				</svg>
+			</a>
+			<p>
+				This is a collection of color studies on aged or otherwise
+				"problematic" polaroids.
+			</p>
+			<svg class="playbutton" onclick="mySwipe.next()" width="101px" height="102px" viewBox="0 -1 101 102" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+				<path d="M50,0 L100,50" id="Line" stroke="#ffffff" stroke-width="1" stroke-linecap="square" fill="none"></path>
+				<path d="M100,50 L50,100" id="Line" stroke="#ffffff" stroke-width="1" stroke-linecap="square" fill="none"></path>
+				<path d="M99,50 L1,50" id="Line" stroke="#ffffff" stroke-width="1" stroke-linecap="square" fill="none"></path>
+			</svg>
 			<header>
 				<h1>Koen Lageveen</h1>
 				<p>Photographer</p>
 			</header>
-			<footer>
-				<a href="about.html" onclick="openAbout(event)">About</a> · <a href="https://www.instagram.com/koen_l/">Instagram</a>
-			</footer>
 		</div>
+		<!-- photos go here -->
+
+		<div class='slide'><span class="title">1</span><img alt='' src='polaroid/8-1920.jpg' srcset='polaroid/8-750.jpg 878w, polaroid/8-1920.jpg 2048w'></div>
+		<div class='slide'><span class="title">2</span><img alt='' src='polaroid/7-1920.jpg' srcset='polaroid/7-750.jpg 878w, polaroid/7-1920.jpg 2048w'></div>
+		<div class='slide'><span class="title">3</span><img alt='' src='polaroid/6-1920.jpg' srcset='polaroid/6-750.jpg 878w, polaroid/6-1920.jpg 2048w'></div>
+		<div class='slide'><span class="title">4</span><img alt='' src='polaroid/2-1920.jpg' srcset='polaroid/2-750.jpg 878w, polaroid/2-1920.jpg 2048w'></div>
+		<div class='slide'><span class="title">5</span><img alt='' src='polaroid/3-1920.jpg' srcset='polaroid/3-750.jpg 878w, polaroid/3-1920.jpg 2048w'></div>
+		<div class='slide'><span class="title">6</span><img alt='' src='polaroid/4-1920.jpg' srcset='polaroid/4-750.jpg 878w, polaroid/4-1920.jpg 2048w'></div>
+		<div class='slide'><span class="title">7</span><img alt='' src='polaroid/9-1920.jpg' srcset='polaroid/9-750.jpg 878w, polaroid/9-1920.jpg 2048w'></div>
+		<div class='slide'><span class="title">8</span><img alt='' src='polaroid/10-1920.jpg' srcset='polaroid/10-750.jpg 878w, polaroid/10-1920.jpg 2048w'></div>
+		<div class='slide'><span class="title">9</span><img alt='' src='polaroid/5-1920.jpg' srcset='polaroid/5-750.jpg 878w, polaroid/5-1920.jpg 2048w'></div>
+		<div class='slide'><span class="title">10</span><img alt='' src='polaroid/12-1920.jpg' srcset='polaroid/12-750.jpg 878w, polaroid/12-1920.jpg 2048w'></div>
+		<div class='slide'><span class="title">11</span><img alt='' src='polaroid/1-1920.jpg' srcset='polaroid/1-750.jpg 878w, polaroid/1-1920.jpg 2048w'></div>
+		<div class='slide'><span class="title">12</span><img alt='' src='polaroid/13-1920.jpg' srcset='polaroid/13-750.jpg 878w, polaroid/13-1920.jpg 2048w'></div>
+		<div class='slide'><span class="title">13</span><img alt='' src='polaroid/11-1920.jpg' srcset='polaroid/11-750.jpg 878w, polaroid/11-1920.jpg 2048w'></div>
+
+		<!-- end of photos -->
 	</div>
 </div>
-
-
+<span class="previous" onclick="mySwipe.prev()"></span>
+<span class="next" onclick="mySwipe.next()"></span>
 <span class="fullscreen" id="fullscreen-button" onclick="toggleFullscreen()">
 	<svg width="43px" height="43px" viewBox="4 3 43 43" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 		<path d="M5,5 L45,5" id="Line" stroke="#FFFFFF" stroke-width="1" stroke-linecap="square" fill="none"></path>
@@ -82,7 +108,7 @@
 
 
 <footer>
-	<span>Koen Lageveen</span><span> · <a href="about.html" onclick="openAbout(event)">About</a> · <a href="https://www.instagram.com/koen_l/">Instagram</a></span>
+	<span>Koen Lageveen</span><span> · <a href="/">Home</a> · <a href="about.html" onclick="openAbout(event)">About</a> · <a href="https://www.instagram.com/koen_l/">Instagram</a></span>
 </footer>
 
 
