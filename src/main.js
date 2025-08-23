@@ -1,4 +1,5 @@
 import screenfull from 'https://cdn.jsdelivr.net/npm/screenfull@6.0.2/+esm'
+import Swipe from 'https://cdn.jsdelivr.net/npm/swipejs@2.3.1/+esm'
 
 window.mySwipe = new Swipe(document.getElementById("swipe"), {
 	speed: 800,
