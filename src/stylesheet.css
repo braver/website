@@ -1,4 +1,5 @@
-/* stylelint-disable property-no-vendor-prefix */
+@import url('reset.css');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Slab:wght@300&display=swap');
 
 @keyframes fadeIn {
 	0%   { opacity: 0; }
