@@ -1,4 +1,4 @@
-/* global window, document, Swipe, screenfull*/
+import screenfull from 'https://cdn.jsdelivr.net/npm/screenfull@6.0.2/+esm'
 
 window.mySwipe = new Swipe(document.getElementById("swipe"), {
 	speed: 800,
@@ -42,14 +42,14 @@ window.closeAbout = function() {
 window.toggleFullscreen = function() {
 	if (screenfull.isFullscreen) {
 		screenfull.exit();
-	} else if (screenfull.enabled) {
+	} else if (screenfull.isEnabled) {
 		screenfull.request();
 	}
 };
 
 window.onload = function() {
 	document.body.classList.add("loaded");
-	if (!screenfull.enabled) {
+	if (!screenfull.isEnabled) {
 		document.getElementById("fullscreen-button").remove();
 	} else {
 		document.addEventListener(screenfull.raw.fullscreenchange, function() {
