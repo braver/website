@@ -69,27 +69,23 @@ window.onload = function () {
   }
 }
 
-// 27 = esc, 37 = left arrow, 38 = up, 39 = right
-// http://unixpapa.com/js/key.html
-// left & right don't trigger keypress in safari
-
 window.onkeyup = function (event) {
-  if (event.keyCode === 27 && document.body.classList.contains('about-is-open')) {
+  if (event.key === 'Escape' && document.body.classList.contains('about-is-open')) {
     window.closeAbout()
     event.preventDefault()
     event.stopPropagation()
   }
-  if (event.keyCode === 37) {
+  if (event.key === 'ArrowLeft') {
     window.mySwipe.prev()
     event.preventDefault()
     event.stopPropagation()
   }
-  if (event.keyCode === 39) {
+  if (event.key === 'ArrowRight') {
     window.mySwipe.next()
     event.preventDefault()
     event.stopPropagation()
   }
-  if (event.keyCode === 38) {
+  if (event.key === 'ArrowUp') {
     window.toggleFullscreen()
     event.preventDefault()
     event.stopPropagation()
