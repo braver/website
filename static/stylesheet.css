@@ -118,28 +118,31 @@ article p + p {
 	align-items: center;
 	justify-content: center;
 	flex-direction: column;
-}
-.slide img {
-	max-width: 100%;
-	max-height: 100%;
-}
-.slide.cover {
-	background: #000;
-}
-.slide > p {
-	margin-top: -20vh;
-	max-width: 40em;
-	padding-bottom: 1.4em;
-}
-.slide > .title {
-	color: hsl(0, 0%, 30%);
-	position: absolute;
-	bottom: .75em;
-	font-family: Avenir, Helvetica, sans-serif;
-	font-size: .82em;
-}
-.slide.not-in-front {
-	visibility: hidden;
+
+	&.cover {
+		background: #000;
+	}
+	&.not-in-front {
+		visibility: hidden;
+	}
+
+	img {
+		max-width: 100%;
+		max-height: 100%;
+	}
+
+	> p {
+		margin-top: -20vh;
+		max-width: 40em;
+		padding-bottom: 1.4em;
+	}
+	> .title {
+		color: hsl(0, 0%, 30%);
+		position: absolute;
+		bottom: .75em;
+		font-family: Avenir, Helvetica, sans-serif;
+		font-size: .82em;
+	}
 }
 .about-is-open .slide img,
 .home.about-is-open .slide.cover {
@@ -160,50 +163,49 @@ article p + p {
 	left: 0;
 	cursor: pointer;
 	transition: opacity .4s ease-in-out;
-}
-.initialized .previous,
-.initialized .next {
-	display: block;
-}
-.about-is-open .previous,
-.about-is-open .next {
-	opacity: 0;
+
+	.initialized & {
+		display: block;
+	}
+	.about-is-open & {
+		opacity: 0;
+	}
+
+	&::after {
+		content: "";
+		pointer-events: none;
+		position: relative;
+		top: 50%;
+		display: block;
+		width: 3em;
+		height: 3em;
+		margin: -1.5em 1.5em 0 1.5em;
+		float: left;
+		border-top: 1px solid hsl(0, 0%, 20%);
+		border-left: 1px solid hsl(0, 0%, 20%);
+		transform: rotate(-45deg);
+		transition: border-color .8s ease-in-out;
+	}
+
+	&:hover::after {
+		border-color: hsl(0, 0%, 60%);
+		transition: border-color .3s ease-in-out;
+	}
+	&:active::after {
+		border-color: hsl(0, 0%, 100%);
+	}
 }
 .next {
 	left: auto;
 	right: 0;
-}
-.at-end .next {
-	display: none;
-}
-.previous::after,
-.next::after {
-	content: "";
-	pointer-events: none;
-	position: relative;
-	top: 50%;
-	display: block;
-	width: 3em;
-	height: 3em;
-	margin: -1.5em 1.5em 0 1.5em;
-	float: left;
-	border-top: 1px solid hsl(0, 0%, 20%);
-	border-left: 1px solid hsl(0, 0%, 20%);
-	transform: rotate(-45deg);
-	transition: border-color .8s ease-in-out;
-}
-.next::after {
-	float: right;
-	transform: rotate(135deg);
-}
-.previous:hover::after,
-.next:hover::after {
-	border-color: hsl(0, 0%, 60%);
-	transition: border-color .3s ease-in-out;
-}
-.previous:active::after,
-.next:active::after {
-	border-color: hsl(0, 0%, 100%);
+
+	.at-end & {
+		display: none;
+	}
+	&::after {
+		float: right;
+		transform: rotate(135deg);
+	}
 }
 
 .fullscreen {
@@ -216,29 +218,31 @@ article p + p {
 	cursor: pointer;
 	text-align: right;
 	transition: opacity .4s ease-in-out;
-}
-.initialized .fullscreen {
-	display: block;
-}
-.about-is-open .fullscreen {
-	opacity: 0;
-}
-.fullscreen svg {
-	transition: all 1.5s ease-in-out;
-}
-.is-fullscreen .fullscreen svg {
-	transform: rotate(-180deg);
-}
-.fullscreen path {
-	stroke: hsl(0, 0%, 30%);
-	transition: stroke .8s ease-in-out;
-}
-.fullscreen:hover path {
-	stroke: hsl(0, 0%, 60%);
-	transition: stroke .4s ease-in-out;
-}
-.fullscreen:active path {
-	stroke: hsl(0, 0%, 100%);
+
+	svg {
+		transition: all 1.5s ease-in-out;
+	}
+	path {
+		stroke: hsl(0, 0%, 30%);
+		transition: stroke .8s ease-in-out;
+	}
+	&:hover path {
+		stroke: hsl(0, 0%, 60%);
+		transition: stroke .4s ease-in-out;
+	}
+	&:active path {
+		stroke: hsl(0, 0%, 100%);
+	}
+
+	.is-fullscreen & svg {
+		transform: rotate(-180deg);
+	}
+	.initialized & {
+		display: block;
+	}
+	.about-is-open & {
+		opacity: 0;
+	}
 }
 
 .back {
@@ -246,32 +250,33 @@ article p + p {
 	top: 5px;
 	left: 5px;
 	transform: rotate(180deg);
-}
-.back path {
-	stroke: hsl(0, 0%, 30%);
-	transition: stroke .8s ease-in-out;
-}
-.back:hover path {
-	stroke: hsl(0, 0%, 60%);
-	transition: stroke .4s ease-in-out;
-}
-.back:active path {
-	stroke: hsl(0, 0%, 100%);
+
+	path {
+		stroke: hsl(0, 0%, 30%);
+		transition: stroke .8s ease-in-out;
+	}
+	&:hover path {
+		stroke: hsl(0, 0%, 60%);
+		transition: stroke .4s ease-in-out;
+	}
+	&:active path {
+		stroke: hsl(0, 0%, 100%);
+	}
 }
 
 .playbutton {
 	cursor: pointer;
 	animation: 6s ease-in-out forwards fadeIn;
-}
-.playbutton path {
-	transition: stroke .8s ease-in-out;
-}
-.playbutton:hover path {
-	stroke: hsl(0, 0%, 60%);
-	transition: stroke .4s ease-in-out;
-}
-.playbutton:active path {
-	stroke: hsl(0, 0%, 100%);
+	path {
+		transition: stroke .8s ease-in-out;
+	}
+	&:hover path {
+		stroke: hsl(0, 0%, 60%);
+		transition: stroke .4s ease-in-out;
+	}
+	&:active path {
+		stroke: hsl(0, 0%, 100%);
+	}
 }
 
 header {
@@ -282,38 +287,47 @@ header {
 	text-shadow: 0 0 .4em #000;
 	opacity: 0;
 	transition: opacity 1s ease-in-out;
+
+	h1 {
+		font-family: "Josefin Slab", Georgia, serif;
+		position: relative;
+		opacity: 0;
+		transition: all 1s ease-in-out .5s;
+	}
+	p {
+		color: #ccc;
+		font-size: 1.333em;
+		font-variant: small-caps;
+		text-transform: lowercase;
+		text-indent: .8em;
+		letter-spacing: .8em;
+		position: relative;
+		line-height: 1;
+		bottom: -2vh;
+		opacity: 0;
+		transition: all 2s ease-in-out .5s;
+	}
+
+	.loaded & {
+		opacity: 1;
+		h1 {
+			opacity: 1;
+		}
+		p {
+			opacity: 1;
+		}
+	}
+
+	@media (max-width: 480px) {
+		h1 {
+			font-size: 2em;
+		}
+		p {
+			font-size: 1em;
+		}
+	}
 }
-header h1 {
-	font-family: "Josefin Slab", Georgia, serif;
-	position: relative;
-	bottom: -2vh;
-	opacity: 0;
-	transition: all 1s ease-in-out .5s;
-}
-header p {
-	color: #ccc;
-	font-size: 1.333em;
-	font-variant: small-caps;
-	text-transform: lowercase;
-	text-indent: .8em;
-	letter-spacing: .8em;
-	position: relative;
-	line-height: 1;
-	bottom: -2vh;
-	opacity: 0;
-	transition: all 2s ease-in-out .5s;
-}
-.loaded header {
-	opacity: 1;
-}
-.loaded header h1 {
-	bottom: 0;
-	opacity: 1;
-}
-.loaded header p {
-	bottom: 0;
-	opacity: 1;
-}
+
 
 footer {
 	position: fixed;
@@ -354,38 +368,40 @@ footer span:last-child {
 	color: transparent;
 	position: relative;
 	overflow: hidden;
-}
-.thumb::before {
-	content: "";
-	background: #000 no-repeat center center;
-	background-size: cover;
-	position: absolute;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	z-index: -1;
-	transition: all 2s ease-in-out .8s;
-}
-.thumb:hover,
-.thumb:active {
-	color: #fff;
-	text-shadow: 0 0 .4em #000;
-	text-decoration: none;
-	will-change: transform;
-	transition: all ease-in-out .8s;
-}
-.thumb.polaroid::before {
-	background-image: url("polaroid.jpg");
-}
-.thumb.travel::before {
-	background-image: url("travel.jpg");
+
+	&::before {
+		content: "";
+		background: #000 no-repeat center center;
+		background-size: cover;
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		z-index: -1;
+		transition: all 2s ease-in-out .8s;
+	}
+	&:hover,
+	&:active {
+		color: #fff;
+		text-shadow: 0 0 .4em #000;
+		text-decoration: none;
+		will-change: transform;
+		transition: all ease-in-out .8s;
+	}
+
+	&.polaroid::before {
+		background-image: url("polaroid.jpg");
+	}
+	&.travel::before {
+		background-image: url("travel.jpg");
+	}
 }
 .loaded .thumb {
 	opacity: 1;
-}
-.loaded .thumb::before {
-	transform: scale(1.2);
+	&::before {
+		transform: scale(1.2);
+	}
 }
 
 .about {
@@ -399,20 +415,22 @@ footer span:last-child {
 	padding: 3em;
 	color: #ccc;
 	overflow: auto;
-}
-.about-is-open .about {
-	display: block;
-	animation: .4s ease-out fadeIn;
-}
-.about > * {
-	max-width: 33rem;
-	margin: 0 auto;
-}
-.about h2 {
-	color: #fff;
-}
-.about p {
-	margin: 1em auto;
+
+	.about-is-open & {
+		display: block;
+		animation: .4s ease-out fadeIn;
+	}
+
+	& > * {
+		max-width: 33rem;
+		margin: 0 auto;
+	}
+	& h2 {
+		color: #fff;
+	}
+	& p {
+		margin: 1em auto;
+	}
 }
 
 .signature {
@@ -426,22 +444,11 @@ footer span:last-child {
 	right: 2em;
 	opacity: .4;
 	transition: opacity .8s ease-in-out;
-}
-.close:hover {
-	transition: opacity .4s ease-in-out;
-	opacity: .8;
-}
-.close:active {
-	opacity: 1;
-}
-
-
-
-@media (max-width: 480px) {
-	header h1 {
-		font-size: 2em;
+	&:hover {
+		transition: opacity .4s ease-in-out;
+		opacity: .8;
 	}
-	header p {
-		font-size: 1em;
+	&:active {
+		opacity: 1;
 	}
 }

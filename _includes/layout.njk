@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="{{ '/static/stylesheet.css' | bust }}">
   </head>
 
-  <body>
+  <body class="{% if page.url == "/" %}home{% endif %}">
     {{ content | safe }}
 
     <article class="about" id="about">
