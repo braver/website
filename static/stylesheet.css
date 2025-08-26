@@ -5,6 +5,10 @@
 	0%   { opacity: 0; }
 	100% { opacity: 1; }
 }
+@keyframes scaleIn {
+	0%   { transform: scale(1); }
+	100% { transform: scale(1.2); }
+}
 @keyframes blurOut {
 	to {
 		filter: blur(4px) grayscale(100%);
@@ -155,7 +159,7 @@ article p + p {
 
 .previous,
 .next {
-	display: none;
+	visibility: hidden;
 	height: 100%;
 	position: fixed;
 	width: 30%;
@@ -165,7 +169,7 @@ article p + p {
 	transition: opacity .4s ease-in-out;
 
 	.initialized & {
-		display: block;
+		visibility: visible;
 	}
 	.about-is-open & {
 		opacity: 0;
@@ -266,7 +270,7 @@ article p + p {
 
 .playbutton {
 	cursor: pointer;
-	animation: 6s ease-in-out forwards fadeIn;
+	animation: 3s ease-in-out forwards fadeIn;
 	path {
 		transition: stroke .8s ease-in-out;
 	}
@@ -281,18 +285,17 @@ article p + p {
 
 header {
 	text-align: center;
-	width: calc(100% - 8em);
 	position: absolute;
 	bottom: 20vh;
+	left: 8rem;
+	right: 8rem;
 	text-shadow: 0 0 .4em #000;
-	opacity: 0;
-	transition: opacity 1s ease-in-out;
 
 	h1 {
 		font-family: "Josefin Slab", Georgia, serif;
 		position: relative;
-		opacity: 0;
-		transition: all 1s ease-in-out .5s;
+		will-change: opacity;
+		animation: 1s ease-in-out forwards fadeIn;
 	}
 	p {
 		color: #ccc;
@@ -303,19 +306,8 @@ header {
 		letter-spacing: .8em;
 		position: relative;
 		line-height: 1;
-		bottom: -2vh;
-		opacity: 0;
-		transition: all 2s ease-in-out .5s;
-	}
-
-	.loaded & {
-		opacity: 1;
-		h1 {
-			opacity: 1;
-		}
-		p {
-			opacity: 1;
-		}
+		will-change: opacity;
+		animation: 2s ease-in-out forwards fadeIn;
 	}
 
 	@media (max-width: 480px) {
@@ -359,8 +351,6 @@ footer {
 	width: 20vw;
 	height: 20vh;
 	display: inline-block;
-	transition: all 2s ease-in-out .8s;
-	opacity: 0;
 	margin-top: -20vh;
 	margin-left: 1.4rem;
 	margin-right: 1.4rem;
@@ -370,6 +360,8 @@ footer {
 	color: transparent;
 	position: relative;
 	overflow: hidden;
+	z-index: 1;
+	animation: 2s ease-in-out forwards fadeIn;
 
 	&::before {
 		content: "";
@@ -381,7 +373,8 @@ footer {
 		bottom: 0;
 		left: 0;
 		z-index: -1;
-		transition: all 2s ease-in-out .8s;
+		will-change: transform;
+		animation: 2s ease-in-out forwards scaleIn;
 	}
 	&:hover,
 	&:active {
@@ -397,13 +390,6 @@ footer {
 	}
 	&.travel::before {
 		background-image: url("travel.jpg");
-	}
-
-	.loaded & {
-		opacity: 1;
-		&::before {
-			transform: scale(1.2);
-		}
 	}
 }
 
