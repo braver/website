@@ -43,3 +43,7 @@ node_modules/*
 # IDE #
 ###########################
 *.sublime-workspace
+
+# Static Site #
+######################
+_site/*
