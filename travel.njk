@@ -1,50 +1,19 @@
 ---
 layout: layout.njk
 title: Travel
+description: This is a series shot along coastal areas like The Wadden and The Canarians.
 ---
 
 <div class="swipe slideshow" id="swipe">
-	<div class="swipe-wrap">
-		<div class="slide cover">
-			<a href="/" class="back">
-				<svg class="playbutton" onclick="mySwipe.next()" width="43px" height="44px" viewBox="0 -1 101 102" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-					<path d="M50,0 L100,50" id="Line" stroke="#ffffff" stroke-width="1" stroke-linecap="square" fill="none"></path>
-					<path d="M100,50 L50,100" id="Line" stroke="#ffffff" stroke-width="1" stroke-linecap="square" fill="none"></path>
-					<path d="M99,50 L1,50" id="Line" stroke="#ffffff" stroke-width="1" stroke-linecap="square" fill="none"></path>
-				</svg>
-			</a>
-			<p>
-				This is a series shot along coastal
-				areas like The Wadden and The Canarians.
-			</p>
-			<svg class="playbutton" onclick="mySwipe.next()" width="101px" height="102px" viewBox="0 -1 101 102" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-				<path d="M50,0 L100,50" id="Line" stroke="#ffffff" stroke-width="1" stroke-linecap="square" fill="none"></path>
-				<path d="M100,50 L50,100" id="Line" stroke="#ffffff" stroke-width="1" stroke-linecap="square" fill="none"></path>
-				<path d="M99,50 L1,50" id="Line" stroke="#ffffff" stroke-width="1" stroke-linecap="square" fill="none"></path>
-			</svg>
-			<header>
-				<h1>Koen Lageveen</h1>
-				<p>Photographer</p>
-			</header>
-		</div>
-		<!-- photos go here -->
+    <div class="swipe-wrap">
 
-		<div class='slide'><span class="title">Gran Canaria</span><img alt='' src='/photo/travel/10-1920.jpg' srcset='/photo/travel/10-750.jpg 878w, /photo/travel/10-1920.jpg 2048w, /photo/travel/10-2560.jpg 2688w'></div>
-		<div class='slide'><span class="title">Ameland</span><img alt='' src='/photo/travel/1-1920.jpg' srcset='/photo/travel/1-750.jpg 878w, /photo/travel/1-1920.jpg 2048w, /photo/travel/1-2560.jpg 2688w'></div>
-		<div class='slide'><span class="title">Ameland</span><img alt='' src='/photo/travel/2-1920.jpg' srcset='/photo/travel/2-750.jpg 878w, /photo/travel/2-1920.jpg 2048w, /photo/travel/2-2560.jpg 2688w'></div>
-		<div class='slide'><span class="title">Tiengemeten</span><img alt='' src='/photo/travel/9-1920.jpg' srcset='/photo/travel/9-750.jpg 878w, /photo/travel/9-1920.jpg 2048w, /photo/travel/9-2560.jpg 2688w'></div>
-		<div class='slide'><span class="title">Ameland</span><img alt='' src='/photo/travel/3-1920.jpg' srcset='/photo/travel/3-750.jpg 878w, /photo/travel/3-1920.jpg 2048w, /photo/travel/3-2560.jpg 2688w'></div>
-		<div class='slide'><span class="title">London</span><img alt='' src='/photo/travel/13-1920.jpg' srcset='/photo/travel/13-750.jpg 878w, /photo/travel/13-1920.jpg 2048w, /photo/travel/13-2560.jpg 2688w'></div>
-		<div class='slide'><span class="title">Greece</span><img alt='' src='/photo/travel/6-1920.jpg' srcset='/photo/travel/6-750.jpg 878w, /photo/travel/6-1920.jpg 2048w, /photo/travel/6-2560.jpg 2688w'></div>
-		<div class='slide'><span class="title">Texel</span><img alt='' src='/photo/travel/7-1920.jpg' srcset='/photo/travel/7-750.jpg 878w, /photo/travel/7-1920.jpg 2048w, /photo/travel/7-2560.jpg 2688w'></div>
-		<div class='slide'><span class="title">Maspalomas</span><img alt='' src='/photo/travel/11-1920.jpg' srcset='/photo/travel/11-750.jpg 878w, /photo/travel/11-1920.jpg 2048w, /photo/travel/11-2560.jpg 2688w'></div>
-		<div class='slide'><span class="title">Maspalomas</span><img alt='' src='/photo/travel/12-1920.jpg' srcset='/photo/travel/12-750.jpg 878w, /photo/travel/12-1920.jpg 2048w, /photo/travel/12-2560.jpg 2688w'></div>
-		<div class='slide'><span class="title">Etna</span><img alt='' src='/photo/travel/8-1920.jpg' srcset='/photo/travel/8-750.jpg 878w, /photo/travel/8-1920.jpg 2048w, /photo/travel/8-2560.jpg 2688w'></div>
-		<div class='slide'><span class="title">Vogelwijk</span><img alt='' src='/photo/travel/5-1920.jpg' srcset='/photo/travel/5-750.jpg 878w, /photo/travel/5-1920.jpg 2048w, /photo/travel/5-2560.jpg 2688w'></div>
-		<div class='slide'><span class="title">Terschelling</span><img alt='' src='/photo/travel/4-1920.jpg' srcset='/photo/travel/4-750.jpg 878w, /photo/travel/4-1920.jpg 2048w, /photo/travel/4-2560.jpg 2688w'></div>
+        {% include "_cover.njk" %}
 
-		<!-- end of photos -->
-	</div>
+        {% for pic in collections.travel -%}
+            <div class='slide'><span class="title">{{ pic.name }}</span><img alt='{{ pic.name }}' src='/photo/travel/{{ pic.key }}-1920.jpg' srcset='/photo/travel/{{ pic.key }}-750.jpg 878w, /photo/travel/{{ pic.key }}-1920.jpg 2048w, /photo/travel/{{ pic.key }}-2560.jpg 2688w'></div>
+        {% endfor %}
+
+    </div>
 </div>
-<span class="previous" onclick="mySwipe.prev()"></span>
-<span class="next" onclick="mySwipe.next()"></span>
+
+{% include "_controls.njk" %}
