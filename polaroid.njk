@@ -9,7 +9,13 @@ description: This is a collection of color studies on aged or otherwise problema
 		{% include "_cover.njk" %}
 
 		{% for pic in collections.polaroid -%}
-		    <div class='slide'><span class="title">{{ pic.name }}</span><img alt='{{ pic.name }}' src='/photo/polaroid/{{ pic.key }}-1920.jpg' srcset='/photo/polaroid/{{ pic.key }}-750.jpg 878w, /photo/polaroid/{{ pic.key }}-1920.jpg 2048w'></div>
+		    <div class='slide'>
+		    	<span class="title">{{ pic.name }}</span>
+		    	<img
+		    		alt='{{ pic.name }}'
+		    		src='/photo/polaroid/{{ pic.key }}-1920.jpg'
+		    		srcset='/photo/polaroid/{{ pic.key }}-750.jpg 878w, /photo/polaroid/{{ pic.key }}-1920.jpg 2048w'>
+		    </div>
 		{% endfor %}
 
 	</div>
