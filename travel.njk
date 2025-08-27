@@ -10,7 +10,13 @@ description: This is a series shot along coastal areas like The Wadden and The C
         {% include "_cover.njk" %}
 
         {% for pic in collections.travel -%}
-            <div class='slide'><span class="title">{{ pic.name }}</span><img alt='{{ pic.name }}' src='/photo/travel/{{ pic.key }}-1920.jpg' srcset='/photo/travel/{{ pic.key }}-750.jpg 878w, /photo/travel/{{ pic.key }}-1920.jpg 2048w, /photo/travel/{{ pic.key }}-2560.jpg 2688w'></div>
+            <div class='slide'>
+                <span class="title">{{ pic.name }}</span>
+                <img
+                    alt='{{ pic.name }}'
+                    src='/photo/travel/{{ pic.key }}-1920.jpg'
+                    srcset='/photo/travel/{{ pic.key }}-750.jpg 878w, /photo/travel/{{ pic.key }}-1920.jpg 2048w'>
+                </div>
         {% endfor %}
 
     </div>
