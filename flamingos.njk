@@ -1,0 +1,24 @@
+---
+layout: layout.njk
+title: Plastic Flamingos
+description: Plastic flamingos and assorted detritus.
+---
+
+<div class="swipe slideshow" id="swipe">
+	<div class="swipe-wrap">
+		{% include "_cover.njk" %}
+
+		{% for pic in collections.flamingos -%}
+		    <div class='slide'>
+		    	<span class="title">{{ pic.name }}</span>
+		    	<img
+		    		alt='{{ pic.name }}'
+		    		src='/photo/flamingos/{{ pic.key }}-1920.jpg'
+		    		srcset='/photo/flamingos/{{ pic.key }}-750.jpg 878w, /photo/flamingos/{{ pic.key }}-1920.jpg 2048w'>
+		    </div>
+		{% endfor %}
+
+	</div>
+</div>
+
+{% include "_controls.njk" %}

@@ -58,6 +58,34 @@ module.exports = function (eleventyConfig) {
         ]
     })
 
+    eleventyConfig.addCollection('flamingos', () => {
+        return [
+            { key: '580-2020-02-16-0008', name: 'Dixi' },
+            { key: '638-2023-08-23-0002', name: 'Security' },
+            { key: '554-2019-05-19-0003', name: 'Private church' },
+            { key: '573-2021-08-29-0002', name: 'Iceland' },
+            { key: '505-0001', name: 'Sicily' },
+            { key: '550-2019-05-04-0001', name: 'Chairs' },
+            { key: '504-0002', name: 'Sicily' },
+            { key: 'R0001338', name: 'Delft' },
+            { key: '611-2021-07-13-0001', name: 'Flamingo' },
+            { key: '220-2020-10-04-0002', name: 'France' },
+            { key: '578-2020-01-14-0001', name: 'Tenerife' },
+            { key: 'DSC_0491', name: 'Cat' },
+            { key: 'L1000004', name: 'Car' },
+            { key: '608-2021-04-14-0002', name: 'Flamingo' },
+            { key: 'IMG_6043', name: 'Floating flamingo' },
+            { key: '612-2021-06-20-0001', name: 'Rectangles' },
+            { key: '638-2023-08-23-0001', name: '14' },
+            { key: '590-2020-07-05-0007', name: 'Sun' },
+            { key: '574-2019-11-06-0001 2', name: 'Airport' },
+            { key: '442-2020-03-14-0003 2', name: 'Beach' },
+            { key: '595-2020-10-31-0005', name: 'Zandmotor' },
+            { key: '630-2022-11-22-0002', name: 'Zeeland' },
+            { key: '634-2023-03-12-0004', name: 'Birds' },
+        ]
+    })
+
     return {
         dir: {
             input: '.',
