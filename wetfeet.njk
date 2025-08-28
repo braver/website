@@ -1,0 +1,24 @@
+---
+layout: layout.njk
+title: Wet Feet
+description: Getting our feet wet near De Pier.
+---
+
+<div class="swipe slideshow" id="swipe">
+	<div class="swipe-wrap">
+		{% include "_cover.njk" %}
+
+		{% for pic in collections.wetfeet -%}
+		    <div class='slide'>
+		    	<span class="title">{{ pic.name }}</span>
+		    	<img
+		    		alt='{{ pic.name }}'
+		    		src='/photo/wetfeet/{{ pic.key }}-1920.jpg'
+		    		srcset='/photo/wetfeet/{{ pic.key }}-750.jpg 878w, /photo/wetfeet/{{ pic.key }}-1920.jpg 2048w'>
+		    </div>
+		{% endfor %}
+
+	</div>
+</div>
+
+{% include "_controls.njk" %}

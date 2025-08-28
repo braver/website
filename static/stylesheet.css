@@ -408,6 +408,9 @@ footer {
 	&.flamingos::before {
 		background-image: url("flamingos.jpg");
 	}
+	&.wetfeet::before {
+		background-image: url("wetfeet.jpg");
+	}
 }
 
 .about {

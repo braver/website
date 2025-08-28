@@ -98,6 +98,21 @@ module.exports = function (eleventyConfig) {
         ]
     })
 
+    eleventyConfig.addCollection('wetfeet', () => {
+        return [
+            { key: 'R0000602', name: '1' },
+            { key: 'R0000603', name: '2' },
+            { key: 'R0000607', name: '3' },
+            { key: 'R0002369', name: '4' },
+            { key: 'R0000664', name: '5' },
+            { key: 'R0000803', name: '6' },
+            { key: 'R0000723', name: '7' },
+            { key: 'R0000721', name: '8' },
+            { key: 'R0000746', name: '9' },
+            { key: 'R0000792', name: '10' },
+        ]
+    })
+
     return {
         dir: {
             input: '.',
