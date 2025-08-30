@@ -94,6 +94,14 @@ em {
 	font-style: italic;
 }
 
+small {
+	font-size: 70%;
+}
+
+[type="checkbox"] {
+	margin-right: 1ex;
+}
+
 article p + p {
 	margin-top: .7em;
 }
@@ -459,5 +467,13 @@ footer {
 	}
 	&:active {
 		opacity: 1;
+	}
+}
+
+#matomo-opt-out {
+	font-size: 70%;
+	color: #ccc;
+	strong {
+		font-weight: normal;
 	}
 }
