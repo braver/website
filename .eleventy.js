@@ -110,6 +110,7 @@ module.exports = function (eleventyConfig) {
             { key: 'R0000721', name: '8' },
             { key: 'R0000746', name: '9' },
             { key: 'R0000792', name: '10' },
+            { key: 'R0002718', name: '11' },
         ]
     })
 
