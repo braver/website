@@ -25,6 +25,7 @@ module.exports = function (eleventyConfig) {
             { key: '547-2019-04-27-0001', name: 'Delft' },
             { key: '303-2018-08-28-0001', name: 'Den Haag' },
             { key: '560-2019-10-21-0003', name: 'Iceland' },
+            { key: '569-2019-10-06-0001', name: 'Iceland' },
             { key: '617-2021-12-04-0001', name: 'Veluwe' },
             { key: '561-2019-10-21-0001', name: 'Iceland' },
             { key: '615-2021-07-24-0001', name: 'Naarden' },
@@ -36,6 +37,8 @@ module.exports = function (eleventyConfig) {
             { key: '227-2020-09-27-0001', name: 'Den Haag' },
             { key: '583-2020-03-24-0002', name: 'Rotterdam' },
             { key: '615-2021-07-24-0004', name: 'Elburg' },
+            { key: '385-2020-03-08-0001', name: 'Schiphol' },
+            { key: '620-2021-12-01-0002', name: 'Tiengemeten' },
         ]
     })
 
