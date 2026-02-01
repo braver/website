@@ -100,22 +100,18 @@ module.exports = function (eleventyConfig) {
 
     eleventyConfig.addCollection('wetfeet', () => {
         return [
-            { key: 'R0000602', name: '1' },
-            { key: 'R0000603', name: '2' },
-            { key: 'R0000607', name: '3' },
-            { key: 'R0002369', name: '4' },
-            { key: 'R0000664', name: '5' },
-            { key: 'R0002355', name: '6' },
-            { key: 'R0000803', name: '7' },
-            { key: 'R0002307', name: '8' },
-            { key: 'R0002281', name: '9' },
-            { key: 'R0002277', name: '10' },
-            { key: 'R0000723', name: '11' },
-            { key: 'R0000721', name: '12' },
-            { key: 'R0000746', name: '13' },
-            { key: 'R0000792', name: '14' },
-            { key: 'R0002718', name: '15' },
-            { key: 'R0002349', name: '16' },
+            { key: 'R0000602', name: '602' },
+            { key: 'R0000603', name: '603' },
+            { key: 'R0000607', name: '607' },
+            { key: 'R0002369', name: '2369' },
+            { key: 'R0000664', name: '664' },
+            { key: 'R0002355', name: '2355' },
+            { key: 'R0000803', name: '803' },
+            { key: 'R0002307', name: '2307' },
+            { key: 'R0000723', name: '723' },
+            { key: 'R0000792', name: '792' },
+            { key: 'R0002718', name: '2718' },
+            { key: 'R0002281', name: '2281' },
         ]
     })
 
