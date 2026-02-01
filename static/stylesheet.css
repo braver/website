@@ -469,11 +469,3 @@ footer {
 		opacity: 1;
 	}
 }
-
-#matomo-opt-out {
-	font-size: 70%;
-	color: #ccc;
-	strong {
-		font-weight: normal;
-	}
-}
