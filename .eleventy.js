@@ -39,6 +39,7 @@ module.exports = function (eleventyConfig) {
             { key: '615-2021-07-24-0004', name: 'Elburg' },
             { key: '385-2020-03-08-0001', name: 'Schiphol' },
             { key: '620-2021-12-01-0002', name: 'Tiengemeten' },
+            { key: '660-2025-12-31-0001', name: 'Battenoord' },
         ]
     })
 
