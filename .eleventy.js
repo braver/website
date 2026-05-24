@@ -119,6 +119,17 @@ module.exports = function (eleventyConfig) {
         ]
     })
 
+    eleventyConfig.addCollection('kites', () => {
+        return [
+            { key: '645-2023-12-29-0003', name: 'Board flip' },
+            { key: '599-2020-12-28-0009', name: 'Schitter' },
+            { key: '600-2020-12-27-0005', name: 'Kite' },
+            { key: '623-2022-03-23-0001', name: 'Going in' },
+            { key: '645-2023-12-27-0001', name: 'Board grab' },
+            { key: '645-2023-12-29-0001', name: 'Flying' },
+        ]
+    })
+
     return {
         dir: {
             input: '.',

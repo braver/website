@@ -419,6 +419,9 @@ footer {
 	&.wetfeet::before {
 		background-image: url("wetfeet.jpg");
 	}
+	&.kites::before {
+		background-image: url("kites.jpg");
+	}
 }
 
 .about {
