@@ -81,6 +81,7 @@ module.exports = function (eleventyConfig) {
 
     eleventyConfig.addCollection('flamingos', () => {
         return [
+            { key: 'R0003289', name: 'Orange' },
             { key: '580-2020-02-16-0008', name: 'Dixi' },
             { key: '638-2023-08-23-0002', name: 'Security' },
             { key: '554-2019-05-19-0003', name: 'Private church' },
@@ -101,6 +102,7 @@ module.exports = function (eleventyConfig) {
             { key: '590-2020-07-05-0007', name: 'Sun' },
             { key: '574-2019-11-06-0001 2', name: 'Airport' },
             { key: '442-2020-03-14-0003 2', name: 'Beach' },
+            { key: 'R0003275', name: 'Mini Flamingo' },
             { key: '595-2020-10-31-0005', name: 'Zandmotor' },
             { key: '630-2022-11-22-0002', name: 'Zeeland' },
             { key: '634-2023-03-12-0004', name: 'Birds' },
